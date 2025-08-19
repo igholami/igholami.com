@@ -25,10 +25,4 @@ export interface Publication {
   videoUrl?: string;
 }
 
-export interface Project {
-  id: number;
-  title: string;
-  company: string;
-}
-
 export type Award = string;

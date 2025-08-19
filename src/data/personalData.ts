@@ -1,4 +1,4 @@
-import type { PersonalInfo, SocialLink, Publication, Project, Award } from '../types';
+import type { PersonalInfo, SocialLink, Publication, Award } from '../types';
 
 export const personalInfo: PersonalInfo = {
   name: "Iman Gholami",
@@ -121,19 +121,6 @@ The celebrated work of [Agrawal, Klein, and Ravi, 1989] (30-Year Test-of-Time aw
 In this paper, we break the approximation barrier of 2 by designing a novel deterministic algorithm that achieves a 2−10−11 approximation for this fundamental problem. As a key component of our approach, we also introduce a novel dual-based local search algorithm for the Steiner Tree problem with an approximation guarantee of 1.943, which is of independent interest.
 
 [Full paper available on arXiv]`
-  }
-]
-
-export const projects: Project[] = [
-  {
-    id: 1,
-    title: "Live Traffic System",
-    company: "Balad Navigation"
-  },
-  {
-    id: 2,
-    title: "Prize-Collecting Steiner Forest Research",
-    company: "University of Maryland"
   }
 ]
 

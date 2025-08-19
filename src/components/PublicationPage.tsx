@@ -56,21 +56,6 @@ const PublicationPage: React.FC = () => {
             Back to Home
           </Button>
 
-          {/* Video Header (if provided) */}
-          {publication.videoUrl && (
-            <div className="mb-8 flex justify-center">
-              <div className="w-full max-w-4xl">
-                <iframe
-                  src={publication.videoUrl}
-                  title={`${publication.title} - Video Presentation`}
-                  className="aspect-video w-full rounded-xl border-gray-700"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            </div>
-          )}
-
           {/* Publication Header */}
           <div>
             <Title level={1} className="mb-2 text-4xl">
@@ -97,6 +82,21 @@ const PublicationPage: React.FC = () => {
               </Button>
             </div>
           </div>
+
+          {/* Video (if provided) */}
+          {publication.videoUrl && (
+            <div className="mb-8 flex justify-center">
+              <div className="w-full max-w-4xl">
+                <iframe
+                  src={publication.videoUrl}
+                  title={`${publication.title} - Video Presentation`}
+                  className="aspect-video w-full rounded-xl border-gray-700"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          )}
 
           {/* Markdown Content */}
           <Card className="bg-gray-800 border border-gray-700 rounded-xl p-6">
