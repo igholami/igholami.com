@@ -25,7 +25,7 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('geeky')
+  const [theme, setTheme] = useState<Theme>('minimal')
   const [is404, setIs404] = useState(false)
 
   const toggleTheme = () => {
