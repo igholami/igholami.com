@@ -4,5 +4,49 @@ Allow: /
 # Sitemap
 Sitemap: https://igholami.com/sitemap.xml
 
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Block common bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Block admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /test/
+
+# Sitemap
+Sitemap: https://igholami.com/sitemap.xml
+
 # Crawl delay (optional)
 Crawl-delay: 1
