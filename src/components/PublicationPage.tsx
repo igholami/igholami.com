@@ -151,100 +151,84 @@ const PublicationPage: React.FC = () => {
             }`}>
               <ReactMarkdown
                 components={{
-                  // Custom paragraph component to handle LaTeX
-                  p: ({ children, ...props }) => (
-                    <p {...props}>
-                      {typeof children === 'string' ? (
-                        <MathRenderer>{children}</MathRenderer>
-                      ) : (
-                        children
-                      )}
-                    </p>
-                  ),
-                  // Custom list item component to handle LaTeX
-                  li: ({ children, ...props }) => (
-                    <li {...props}>
-                      {typeof children === 'string' ? (
-                        <MathRenderer>{children}</MathRenderer>
-                      ) : (
-                        children
-                      )}
-                    </li>
-                  ),
-                  // Custom heading component to handle LaTeX
+                  // Render math inside headings while preserving structure
                   h1: ({ children, ...props }) => (
-                    <h1 {...props}>
-                      {typeof children === 'string' ? (
-                        <MathRenderer>{children}</MathRenderer>
-                      ) : (
-                        children
-                      )}
+                    <h1 {...props} className="text-3xl font-bold mb-4">
+                      {typeof children === 'string' ? <MathRenderer>{children}</MathRenderer> : children}
                     </h1>
                   ),
                   h2: ({ children, ...props }) => (
-                    <h2 {...props}>
-                      {typeof children === 'string' ? (
-                        <MathRenderer>{children}</MathRenderer>
-                      ) : (
-                        children
-                      )}
+                    <h2 {...props} className="text-2xl font-bold mb-3">
+                      {typeof children === 'string' ? <MathRenderer>{children}</MathRenderer> : children}
                     </h2>
                   ),
                   h3: ({ children, ...props }) => (
-                    <h3 {...props}>
-                      {typeof children === 'string' ? (
-                        <MathRenderer>{children}</MathRenderer>
-                      ) : (
-                        children
-                      )}
+                    <h3 {...props} className="text-xl font-bold mb-2">
+                      {typeof children === 'string' ? <MathRenderer>{children}</MathRenderer> : children}
                     </h3>
                   ),
                   h4: ({ children, ...props }) => (
-                    <h4 {...props}>
-                      {typeof children === 'string' ? (
-                        <MathRenderer>{children}</MathRenderer>
-                      ) : (
-                        children
-                      )}
+                    <h4 {...props} className="text-lg font-bold mb-2">
+                      {typeof children === 'string' ? <MathRenderer>{children}</MathRenderer> : children}
                     </h4>
                   ),
                   h5: ({ children, ...props }) => (
-                    <h5 {...props}>
-                      {typeof children === 'string' ? (
-                        <MathRenderer>{children}</MathRenderer>
-                      ) : (
-                        children
-                      )}
+                    <h5 {...props} className="text-base font-bold mb-1">
+                      {typeof children === 'string' ? <MathRenderer>{children}</MathRenderer> : children}
                     </h5>
                   ),
                   h6: ({ children, ...props }) => (
-                    <h6 {...props}>
-                      {typeof children === 'string' ? (
-                        <MathRenderer>{children}</MathRenderer>
-                      ) : (
-                        children
-                      )}
+                    <h6 {...props} className="text-sm font-bold mb-1">
+                      {typeof children === 'string' ? <MathRenderer>{children}</MathRenderer> : children}
                     </h6>
                   ),
-                  // Custom strong component to handle LaTeX
+                  // Render math inside paragraphs while preserving structure
+                  p: ({ children, ...props }) => {
+                    const renderChildren = (nodes: React.ReactNode): React.ReactNode => {
+                      if (typeof nodes === 'string') return <MathRenderer>{nodes}</MathRenderer>;
+                      if (Array.isArray(nodes)) {
+                        return nodes.map((node, idx) => (
+                          typeof node === 'string' ? <MathRenderer key={idx}>{node}</MathRenderer> : node
+                        ));
+                      }
+                      return nodes;
+                    };
+                    return <p {...props} className="mb-3">{renderChildren(children)}</p>;
+                  },
+                  // Render math inside list items
+                  li: ({ children, ...props }) => {
+                    const renderChildren = (nodes: React.ReactNode): React.ReactNode => {
+                      if (typeof nodes === 'string') return <MathRenderer>{nodes}</MathRenderer>;
+                      if (Array.isArray(nodes)) {
+                        return nodes.map((node, idx) => (
+                          typeof node === 'string' ? <MathRenderer key={idx}>{node}</MathRenderer> : node
+                        ));
+                      }
+                      return nodes;
+                    };
+                    return <li {...props} className="mb-1">{renderChildren(children)}</li>;
+                  },
+                  // Emphasis and strong should also pass through math when plain text
                   strong: ({ children, ...props }) => (
                     <strong {...props}>
-                      {typeof children === 'string' ? (
-                        <MathRenderer>{children}</MathRenderer>
-                      ) : (
-                        children
-                      )}
+                      {typeof children === 'string' ? <MathRenderer>{children}</MathRenderer> : children}
                     </strong>
                   ),
-                  // Custom emphasis component to handle LaTeX
                   em: ({ children, ...props }) => (
                     <em {...props}>
-                      {typeof children === 'string' ? (
-                        <MathRenderer>{children}</MathRenderer>
-                      ) : (
-                        children
-                      )}
+                      {typeof children === 'string' ? <MathRenderer>{children}</MathRenderer> : children}
                     </em>
+                  ),
+                  // Handle lists properly
+                  ul: ({ children, ...props }) => (
+                    <ul {...props} className="list-disc list-inside mb-3 space-y-1">
+                      {children}
+                    </ul>
+                  ),
+                  ol: ({ children, ...props }) => (
+                    <ol {...props} className="list-decimal list-inside mb-3 space-y-1">
+                      {children}
+                    </ol>
                   ),
                 }}
               >

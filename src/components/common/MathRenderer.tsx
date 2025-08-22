@@ -11,7 +11,7 @@ const MathRenderer: React.FC<MathRendererProps> = ({ children, className = '' })
   const parts = children.split(/(\$\$.*?\$\$|\$.*?\$)/g);
   
   return (
-    <span className={className}>
+    <span className={className} style={{ color: 'inherit' }}>
       {parts.map((part, index) => {
         // Check if it's a block math expression ($$...$$)
         if (part.startsWith('$$') && part.endsWith('$$')) {
@@ -25,7 +25,7 @@ const MathRenderer: React.FC<MathRendererProps> = ({ children, className = '' })
         }
         // Regular text
         else {
-          return <span key={index}>{part}</span>;
+          return <span key={index} style={{ color: 'inherit' }}>{part}</span>;
         }
       })}
     </span>

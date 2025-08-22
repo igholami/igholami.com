@@ -18,7 +18,7 @@ const Math: React.FC<MathProps> = ({ children, block = false, className = '' }) 
   } catch (error) {
     console.error('Math rendering error:', error);
     return (
-      <span className={`text-blue-500 ${className}`}>
+      <span className={className} style={{ color: 'inherit' }}>
         {block ? `$$${children}$$` : `$${children}$`}
       </span>
     );
