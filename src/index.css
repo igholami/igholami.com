@@ -76,6 +76,27 @@ body {
   border-color: #555555 !important;
 }
 
+
+/* Ensure all buttons in geeky mode have consistent styling */
+.dark-layout .ant-btn[class*="font-mono"] {
+  font-family: 'Courier New', monospace !important;
+  letter-spacing: 0.5px !important;
+  text-shadow: 0 0 2px currentColor !important;
+}
+
+/* Geeky button hover effects */
+.dark-layout .ant-btn.font-mono:hover {
+  text-shadow: 0 0 4px currentColor !important;
+  box-shadow: 0 0 5px currentColor !important;
+}
+
+/* Geeky theme for all interactive elements */
+.dark-layout .ant-btn.font-mono,
+.dark-layout .ant-btn[class*="font-mono"] {
+  transition: all 0.3s ease !important;
+}
+
+
 /* Social Icons Styling */
 .social-icon-link i {
   font-style: normal !important;
