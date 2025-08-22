@@ -154,7 +154,7 @@ const HeroSection: React.FC = () => {
         </Title>
         <Paragraph className={`text-sm max-w-2xl mx-auto mb-4 text-center ${
           isGeeky 
-            ? 'text-gray-300 font-mono border border-cyan-400/30 p-3' 
+            ? 'text-gray-300 font-mono border border-green-400/30 p-3' 
             : 'text-gray-300'
         }`}>
           {isGeeky && <><span className="text-green-400">// About</span><br/></>}
