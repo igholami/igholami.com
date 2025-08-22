@@ -22,11 +22,14 @@ const PublicationPage: React.FC = () => {
     window.scrollTo(0, 0)
   }, [slug])
   
-  if (!publication) {
-    // Let the general 404 page handle this
-    navigate('/404', { replace: true })
-    return null
-  }
+  // Redirect invalid slugs to the app-wide 404 page reliably
+  useEffect(() => {
+    if (!publication) {
+      navigate('/404', { replace: true })
+    }
+  }, [publication, navigate])
+
+  if (!publication) return null
 
   return (
     <Layout className="dark-layout">
