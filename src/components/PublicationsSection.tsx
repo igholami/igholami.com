@@ -2,6 +2,7 @@ import { Typography, Card } from 'antd'
 import { Link } from 'react-router-dom'
 import { publications } from '../data/personalData'
 import { useTheme } from '../contexts/ThemeContext'
+import { MathRenderer } from './common'
 
 const { Title, Text } = Typography
 
@@ -57,7 +58,7 @@ const PublicationsSection: React.FC = () => {
                         onMouseEnter={(e) => e.currentTarget.style.color = '#4ade80'}
                         onMouseLeave={(e) => e.currentTarget.style.color = '#86efac'}
                       >
-                        {publication.title}
+                        {<MathRenderer>{publication.title}</MathRenderer>}
                       </Link>
                     </Title>
                     <Text className="text-gray-400 text-sm font-mono">
@@ -80,7 +81,7 @@ const PublicationsSection: React.FC = () => {
                       onMouseEnter={(e) => e.currentTarget.style.color = '#60a5fa'}
                       onMouseLeave={(e) => e.currentTarget.style.color = '#93c5fd'}
                     >
-                      {publication.title}
+                      {<MathRenderer>{publication.title}</MathRenderer>}
                     </Link>
                   </Title>
                   <Text className="text-blue-100 text-sm">

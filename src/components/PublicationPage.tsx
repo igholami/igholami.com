@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { publications } from '../data/personalData'
-import { Container } from './common'
+import { Container, MathRenderer } from './common'
 import { useTheme } from '../contexts/ThemeContext'
 
 const { Title, Text } = Typography
@@ -63,10 +63,10 @@ const PublicationPage: React.FC = () => {
                 // publication.h
               </div>
             )}
-                         <Title level={1} className={`my-2 text-4xl ${
+            <Title level={1} className={`my-2 text-4xl ${
               isGeeky ? 'font-mono text-green-300' : 'font-normal text-blue-300'
             }`}>
-              {isGeeky && <span className="text-green-400">&gt;</span>} {publication.title}
+              {isGeeky && <span className="text-green-400">&gt;</span>} {<MathRenderer>{publication.title}</MathRenderer>}
             </Title>
             <div className={`flex items-center space-x-2 mb-4 ${
               isGeeky ? 'font-mono' : 'font-normal'
@@ -149,7 +149,107 @@ const PublicationPage: React.FC = () => {
             <div className={`markdown-content ${
               isGeeky ? 'font-mono' : 'font-normal'
             }`}>
-              <ReactMarkdown>{publication.content}</ReactMarkdown>
+              <ReactMarkdown
+                components={{
+                  // Custom paragraph component to handle LaTeX
+                  p: ({ children, ...props }) => (
+                    <p {...props}>
+                      {typeof children === 'string' ? (
+                        <MathRenderer>{children}</MathRenderer>
+                      ) : (
+                        children
+                      )}
+                    </p>
+                  ),
+                  // Custom list item component to handle LaTeX
+                  li: ({ children, ...props }) => (
+                    <li {...props}>
+                      {typeof children === 'string' ? (
+                        <MathRenderer>{children}</MathRenderer>
+                      ) : (
+                        children
+                      )}
+                    </li>
+                  ),
+                  // Custom heading component to handle LaTeX
+                  h1: ({ children, ...props }) => (
+                    <h1 {...props}>
+                      {typeof children === 'string' ? (
+                        <MathRenderer>{children}</MathRenderer>
+                      ) : (
+                        children
+                      )}
+                    </h1>
+                  ),
+                  h2: ({ children, ...props }) => (
+                    <h2 {...props}>
+                      {typeof children === 'string' ? (
+                        <MathRenderer>{children}</MathRenderer>
+                      ) : (
+                        children
+                      )}
+                    </h2>
+                  ),
+                  h3: ({ children, ...props }) => (
+                    <h3 {...props}>
+                      {typeof children === 'string' ? (
+                        <MathRenderer>{children}</MathRenderer>
+                      ) : (
+                        children
+                      )}
+                    </h3>
+                  ),
+                  h4: ({ children, ...props }) => (
+                    <h4 {...props}>
+                      {typeof children === 'string' ? (
+                        <MathRenderer>{children}</MathRenderer>
+                      ) : (
+                        children
+                      )}
+                    </h4>
+                  ),
+                  h5: ({ children, ...props }) => (
+                    <h5 {...props}>
+                      {typeof children === 'string' ? (
+                        <MathRenderer>{children}</MathRenderer>
+                      ) : (
+                        children
+                      )}
+                    </h5>
+                  ),
+                  h6: ({ children, ...props }) => (
+                    <h6 {...props}>
+                      {typeof children === 'string' ? (
+                        <MathRenderer>{children}</MathRenderer>
+                      ) : (
+                        children
+                      )}
+                    </h6>
+                  ),
+                  // Custom strong component to handle LaTeX
+                  strong: ({ children, ...props }) => (
+                    <strong {...props}>
+                      {typeof children === 'string' ? (
+                        <MathRenderer>{children}</MathRenderer>
+                      ) : (
+                        children
+                      )}
+                    </strong>
+                  ),
+                  // Custom emphasis component to handle LaTeX
+                  em: ({ children, ...props }) => (
+                    <em {...props}>
+                      {typeof children === 'string' ? (
+                        <MathRenderer>{children}</MathRenderer>
+                      ) : (
+                        children
+                      )}
+                    </em>
+                  ),
+                }}
+              >
+                {publication.content}
+              </ReactMarkdown>
             </div>
           </Card>
         </Container>

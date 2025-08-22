@@ -1,3 +1,5 @@
 export { default as Container } from './Container'
 export { default as Card } from './Card'
 export { default as ThemeToggle } from './ThemeToggle'
+export { default as Math } from './Math'
+export { default as MathRenderer } from './MathRenderer'

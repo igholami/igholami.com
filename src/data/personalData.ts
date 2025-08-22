@@ -109,7 +109,7 @@ This paper explores whether one can obtain a better approximation compared to an
     id: 5,
     order: 5,
     slug: "breaking-barrier",
-    title: "Breaking a Long-Standing Barrier: 2-$\epsilon$ Approximation for Steiner Forest",
+    title: "Breaking a Long-Standing Barrier: 2-$\\varepsilon$ Approximation for Steiner Forest",
     venue: "arXiv preprint",
     year: "2025",
     url: "https://arxiv.org/abs/2504.11398",

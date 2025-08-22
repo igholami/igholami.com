@@ -91,3 +91,164 @@ body {
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
 }
+
+/* Math rendering styles */
+.katex {
+  font-size: 1.1em;
+  line-height: 1.2;
+  color: inherit !important;
+}
+
+.katex-display {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+.katex-display .katex {
+  font-size: 1.2em;
+}
+
+/* Force all KaTeX elements to inherit color */
+.katex * {
+  color: inherit !important;
+}
+
+.katex .mord,
+.katex .mbin,
+.katex .mrel,
+.katex .mop,
+.katex .mopen,
+.katex .mclose,
+.katex .mpunct,
+.katex .minner,
+.katex .mord,
+.katex .mbin,
+.katex .mrel,
+.katex .mop,
+.katex .mopen,
+.katex .mclose,
+.katex .mpunct,
+.katex .minner,
+.katex .mord,
+.katex .mbin,
+.katex .mrel,
+.katex .mop,
+.katex .mopen,
+.katex .mclose,
+.katex .mpunct,
+.katex .minner {
+  color: inherit !important;
+}
+
+/* Specific overrides for common KaTeX elements */
+.katex .mord,
+.katex .mbin,
+.katex .mrel,
+.katex .mop,
+.katex .mopen,
+.katex .mclose,
+.katex .mpunct,
+.katex .minner {
+  color: inherit !important;
+}
+
+/* Ensure all text elements inherit color */
+.katex .mtext,
+.katex .mord,
+.katex .mbin,
+.katex .mrel,
+.katex .mop,
+.katex .mopen,
+.katex .mclose,
+.katex .mpunct,
+.katex .minner,
+.katex .mord,
+.katex .mbin,
+.katex .mrel,
+.katex .mop,
+.katex .mopen,
+.katex .mclose,
+.katex .mpunct,
+.katex .minner {
+  color: inherit !important;
+}
+
+/* Math component specific styling */
+.math-inline,
+.math-block {
+  color: inherit !important;
+}
+
+.math-inline .katex,
+.math-block .katex {
+  color: inherit !important;
+}
+
+.math-inline .katex *,
+.math-block .katex * {
+  color: inherit !important;
+}
+
+/* Ensure math inherits from parent text color */
+.katex-display,
+.katex-display * {
+  color: inherit !important;
+}
+
+/* Override any KaTeX default colors */
+.katex .mord,
+.katex .mbin,
+.katex .mrel,
+.katex .mop,
+.katex .mopen,
+.katex .mclose,
+.katex .mpunct,
+.katex .minner,
+.katex .mtext,
+.katex .mord,
+.katex .mbin,
+.katex .mrel,
+.katex .mop,
+.katex .mopen,
+.katex .mclose,
+.katex .mpunct,
+.katex .minner {
+  color: inherit !important;
+}
+
+/* Ensure math inherits from Ant Design Typography */
+.ant-typography .katex,
+.ant-typography .katex * {
+  color: inherit !important;
+}
+
+.ant-typography h1 .katex,
+.ant-typography h1 .katex *,
+.ant-typography h2 .katex,
+.ant-typography h2 .katex *,
+.ant-typography h3 .katex,
+.ant-typography h3 .katex *,
+.ant-typography h4 .katex,
+.ant-typography h4 .katex *,
+.ant-typography h5 .katex,
+.ant-typography h5 .katex *,
+.ant-typography h6 .katex,
+.ant-typography h6 .katex *,
+.ant-typography p .katex,
+.ant-typography p .katex *,
+.ant-typography li .katex,
+.ant-typography li .katex *,
+.ant-typography strong .katex,
+.ant-typography strong .katex *,
+.ant-typography em .katex,
+.ant-typography em .katex * {
+  color: inherit !important;
+}
+
+/* Force inheritance for all KaTeX elements */
+.katex,
+.katex *,
+.katex-display,
+.katex-display * {
+  color: inherit !important;
+}
