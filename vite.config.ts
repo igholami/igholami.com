@@ -7,6 +7,8 @@ export default defineConfig({
   base: '/',
   build: {
     outDir: 'dist',
+    // Add target to ensure compatibility
+    target: 'es2020',
     rollupOptions: {
       output: {
         manualChunks: {
@@ -29,5 +31,13 @@ export default defineConfig({
   // Optimize dependencies
   optimizeDeps: {
     include: ['react', 'react-dom', 'antd'],
+    // Force esbuild target
+    esbuildOptions: {
+      target: 'es2020'
+    }
   },
+  // Ensure compatibility
+  esbuild: {
+    target: 'es2020'
+  }
 })
