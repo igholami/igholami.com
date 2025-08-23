@@ -83,6 +83,9 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Iman Gholami - PhD Student in Computer Science at University of Maryland" />
+    
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="/profile.jpg" type="image/jpeg">
     <meta property="og:site_name" content="Iman Gholami" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="en_GB" />
@@ -109,25 +112,51 @@
     <link rel="manifest" href="/site.webmanifest" />
     
     <!-- Academicons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+          <!-- Critical CSS for above-the-fold content -->
+           <style>
+             /* Critical CSS for initial render */
+             body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+             #root { min-height: 100vh; }
+             .dark-layout { background-color: #000; color: #fff; }
+             .ant-layout { background: transparent; }
+             .ant-typography { color: inherit; }
+             .ant-card { background: rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.1); }
+             .ant-btn { border-radius: 6px; }
+             .loading { text-align: center; padding: 2rem; color: #666; }
+           </style>
+           
+           <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     
-    <!-- KaTeX for Math Rendering -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+Wdt4GWQBUd+lPigvtiOLhM" crossorigin="anonymous">
+               <!-- KaTeX for Math Rendering - Optimized with font-display: swap -->
+           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+Wdt4GWQBUd+lPigvtiOLhM" crossorigin="anonymous">
+           
+           <!-- Preload critical KaTeX fonts -->
+           <link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin>
+           <link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin>
+           <link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin>
     
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+               <!-- Preconnect for Performance -->
+           <link rel="preconnect" href="https://www.googletagmanager.com" />
+           <link rel="preconnect" href="https://fonts.googleapis.com" />
+           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+           <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+           <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+           <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G87066509P"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-G87066509P');
-    </script>
+               <!-- Google Analytics - Optimized loading -->
+           <script>
+             // Preload gtag script
+             const gtagScript = document.createElement('script');
+             gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-G87066509P';
+             gtagScript.async = true;
+             document.head.appendChild(gtagScript);
+             
+             // Initialize gtag
+             window.dataLayer = window.dataLayer || [];
+             function gtag(){dataLayer.push(arguments);}
+             gtag('js', new Date());
+             gtag('config', 'G-G87066509P');
+           </script>
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -244,7 +273,22 @@
   </head>
   <body>
     <div id="root" role="main" aria-label="Main content"></div>
-    <script type="module" src="/src/main.tsx"></script>
+               <script type="module" src="/src/main.tsx"></script>
+           
+           <!-- Service Worker Registration -->
+           <script>
+             if ('serviceWorker' in navigator) {
+               window.addEventListener('load', () => {
+                 navigator.serviceWorker.register('/sw.js')
+                   .then((registration) => {
+                     console.log('SW registered: ', registration);
+                   })
+                   .catch((registrationError) => {
+                     console.log('SW registration failed: ', registrationError);
+                   });
+               });
+             }
+           </script>
     
     <!-- Additional Accessibility Scripts -->
     <script>
@@ -276,23 +320,29 @@
           mainContent.setAttribute('aria-label', 'Main content area');
         }
         
-        // Add performance monitoring
-        if ('performance' in window) {
-          window.addEventListener('load', function() {
-            setTimeout(function() {
-              const perfData = performance.getEntriesByType('navigation')[0];
-              if (perfData) {
-                // Send performance data to Google Analytics
-                if (typeof gtag !== 'undefined') {
-                  gtag('event', 'timing_complete', {
-                    name: 'load',
-                    value: Math.round(perfData.loadEventEnd - perfData.loadEventStart)
-                  });
-                }
-              }
-            }, 0);
-          });
-        }
+                       // Add performance monitoring - optimized
+               if ('performance' in window && 'getEntriesByType' in performance) {
+                 // Use requestIdleCallback for non-critical performance monitoring
+                 const reportPerformance = () => {
+                   try {
+                     const perfData = performance.getEntriesByType('navigation')[0];
+                     if (perfData && typeof gtag !== 'undefined') {
+                       gtag('event', 'timing_complete', {
+                         name: 'load',
+                         value: Math.round(perfData.loadEventEnd - perfData.loadEventStart)
+                       });
+                     }
+                   } catch (e) {
+                     // Silent fail for performance monitoring
+                   }
+                 };
+                 
+                 if ('requestIdleCallback' in window) {
+                   requestIdleCallback(reportPerformance);
+                 } else {
+                   setTimeout(reportPerformance, 1000);
+                 }
+               }
         
         // Add accessibility improvements
         document.addEventListener('keydown', function(e) {

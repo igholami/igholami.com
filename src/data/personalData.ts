@@ -1,4 +1,4 @@
-import type { PersonalInfo, SocialLink, Publication, Award } from '../types';
+import type { PersonalInfo, SocialLink, Publication, Award, MiniProject } from '../types';
 
 export const personalInfo: PersonalInfo = {
   name: "Iman Gholami",
@@ -133,3 +133,53 @@ export const awards: Award[] = [
   "Gold Medal, Iran National Olympiad in Informatics (INOI) (2016)",
   "Silver Medal, Iran National Olympiad in Informatics (INOI) (2015)"
 ]
+
+export const miniProjects: MiniProject[] = [
+  {
+    id: 1,
+    name: "Metachamber - Metadata Discovery Platform",
+    description: "AI-powered platform for discovering and generating metadata descriptions automatically.",
+    githubUrl: "https://github.com/igholami/metachamber-back",
+    technologies: ["Python", "Django REST Framework", "Vue.js", "ChatGPT"]
+  },
+  {
+    id: 2,
+    name: "Grass - AI Automated Grading Assistant",
+    description: "An intelligent automated grading platform that integrates Canvas LMS, ChatGPT, and Telegram.",
+    githubUrl: "https://github.com/igholami/grass",
+    technologies: ["Python", "Django", "ChatGPT", "Telegram API"]
+  },
+  {
+    id: 3,
+    name: "Teeworlds Docker",
+    description: "Docker image for teeworlds (and mods) servers.",
+    githubUrl: "https://github.com/igholami/teeworlds-docker",
+    technologies: ["Dockerfile", "Shell"],
+    geekyOnly: true
+  },
+  {
+    id: 4,
+    name: "Say the Lyrics - Chrome Extension",
+    description: "A Chrome extension to play “Don’t Forget the Lyrics!” using Spotify’s lyrics feature.",
+    githubUrl: "https://github.com/igholami/say-the-lyrics",
+    technologies: ["JavaScript", "CSS", "Chrome Extension"],
+    geekyOnly: true
+  },
+  {
+    id: 5,
+    name: "Tele-tweet - Telegram Bot",
+    description: "Django Telegram bot for Twitter-like messaging with channel broadcasting.",
+    githubUrl: "https://github.com/igholami/tele-tweet",
+    technologies: ["Python", "Django", "Telegram Bot API"],
+    geekyOnly: true
+  },
+  {
+    id: 6,
+    name: "Swan - Reddit-like Knowledge Sharing Platform",
+    description: "A community-driven platform for sharing and discussing knowledge with voting and commenting features.",
+    githubUrl: "https://github.com/igholami/swan",
+    technologies: ["Vue.js", "Quasar", "JavaScript", "HTML", "Python", "Django"],
+    geekyOnly: true
+  }
+]
+ 

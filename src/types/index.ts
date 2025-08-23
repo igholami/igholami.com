@@ -26,3 +26,12 @@ export interface Publication {
 }
 
 export type Award = string;
+
+export interface MiniProject {
+  id: number;
+  name: string;
+  description: string;
+  githubUrl: string;
+  technologies?: string[];
+  geekyOnly?: boolean;
+}
