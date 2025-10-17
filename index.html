@@ -128,7 +128,7 @@
            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     
                <!-- KaTeX for Math Rendering - Optimized with font-display: swap -->
-           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+Wdt4GWQBUd+lPigvtiOLhM" crossorigin="anonymous">
+           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
            
            <!-- Preload critical KaTeX fonts -->
            <link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -275,17 +275,14 @@
     <div id="root" role="main" aria-label="Main content"></div>
                <script type="module" src="/src/main.tsx"></script>
            
-           <!-- Service Worker Registration -->
+           <!-- Service Worker Unregistration - Remove any existing service workers -->
            <script>
              if ('serviceWorker' in navigator) {
-               window.addEventListener('load', () => {
-                 navigator.serviceWorker.register('/sw.js')
-                   .then((registration) => {
-                     console.log('SW registered: ', registration);
-                   })
-                   .catch((registrationError) => {
-                     console.log('SW registration failed: ', registrationError);
-                   });
+               navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                 for(let registration of registrations) {
+                   registration.unregister();
+                   console.log('Service worker unregistered');
+                 }
                });
              }
            </script>
@@ -353,6 +350,82 @@
           }
         });
       });
+    </script>
+    
+    <!-- Console Greeting / Easter Egg Hint -->
+    <script>
+      (function() {
+        try {
+          var headlineStyle = 'font-weight:700; color:#22c55e; font-size:14px;';
+          var message = 'Type "sudo" and see the magic. Press "q" if it was too much';
+          console.log('%cWelcome, curious mind!', headlineStyle);
+          console.log(message);
+        } catch (e) {
+          // no-op
+        }
+      })();
+    </script>
+    
+    <!-- Console Interactive Commands: sudo / q -->
+    <script>
+      (function() {
+        try {
+          var MAGIC_CLASS = 'magic-mode-active';
+          var STYLE_ID = 'magic-mode-style';
+          var timeoutId = null;
+
+          function startMagic() {
+            // Inject style once
+            if (!document.getElementById(STYLE_ID)) {
+              var style = document.createElement('style');
+              style.id = STYLE_ID;
+              style.textContent = `
+                .${MAGIC_CLASS} { position: relative; }
+                .${MAGIC_CLASS}::before { content: ""; position: fixed; inset: 0; pointer-events: none; background: radial-gradient(1200px 600px at 10% 10%, rgba(34,197,94,0.08), transparent), radial-gradient(1000px 500px at 90% 20%, rgba(59,130,246,0.08), transparent), radial-gradient(800px 400px at 30% 90%, rgba(244,63,94,0.08), transparent); }
+                @keyframes hueRotate { from { filter: hue-rotate(0deg) } to { filter: hue-rotate(360deg) } }
+                .${MAGIC_CLASS} { animation: hueRotate 6s linear infinite; }
+              `;
+              document.head.appendChild(style);
+            }
+
+            if (!document.documentElement.classList.contains(MAGIC_CLASS)) {
+              document.documentElement.classList.add(MAGIC_CLASS);
+              console.log('%cSudo accepted. Elevating visuals…', 'color:#38bdf8; font-weight:600;');
+            }
+
+            // Auto-stop after 10s if not cancelled
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(stopMagic, 10000);
+          }
+
+          function stopMagic() {
+            document.documentElement.classList.remove(MAGIC_CLASS);
+            console.log('%cMagic stopped.', 'color:#f43f5e; font-weight:600;');
+          }
+
+          // Define console getters so typing sudo/q triggers them
+          if (!('sudo' in window)) {
+            Object.defineProperty(window, 'sudo', {
+              configurable: true,
+              get: function() {
+                startMagic();
+                return '🪄 Magic initiated. Type q to stop.';
+              }
+            });
+          }
+          if (!('q' in window)) {
+            Object.defineProperty(window, 'q', {
+              configurable: true,
+              get: function() {
+                stopMagic();
+                return '✔ Stopped.';
+              }
+            });
+          }
+        } catch (e) {
+          // no-op
+        }
+      })();
     </script>
   </body>
 </html>

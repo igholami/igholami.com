@@ -48,8 +48,7 @@ export const publications: Publication[] = [
     order: 2,
     slug: "prize-collecting-steiner-tree-179",
     title: "Prize-Collecting Steiner Tree: A 1.79 Approximation",
-    venue: "ACM Symposium on Theory of Computing (STOC)",
-    year: "2024",
+    venues: ["ACM Symposium on Theory of Computing (STOC) - 2024"],
     url: "https://doi.org/10.1145/3618260.3649789",
     content: `## Abstract
 
@@ -66,8 +65,11 @@ In this paper, we reduce the approximation factor for the PCST problem substanti
     order: 4,
     slug: "steiner-forest-2-approximation-jacm",
     title: "2-Approximation for Prize-Collecting Steiner Forest",
-    venue: "Journal of the ACM (JACM)",
-    year: "2025", 
+    venues: [
+      "Journal of the ACM (JACM) - 2025",
+      "ACM-SIAM Symposium on Discrete Algorithms (SODA) - 2024"
+    ],
+    badge: "special-issue",
     url: "https://doi.org/10.1145/3722551",
     content: `## Abstract
 
@@ -76,27 +78,11 @@ Approximation algorithms for the prize-collecting Steiner forest (PCSF) problem 
 [Full paper available in Journal of the ACM]`
   },
   {
-    id: 3,
-    order: 1,
-    slug: "steiner-forest-2-approximation-soda",
-    title: "2-Approximation for Prize-Collecting Steiner Forest",
-    venue: "ACM-SIAM Symposium on Discrete Algorithms (SODA)",
-    year: "2024",
-    badge: "special-issue",
-    url: "https://epubs.siam.org/doi/abs/10.1137/1.9781611977912.25",
-    content: `## Abstract
-
-Approximation algorithms for the prize-collecting Steiner forest problem (PCSF) have been a subject of research for over three decades, starting with the seminal works of Agrawal, Klein, and Ravi [1, 2] and Goemans and Williamson [14, 15] on Steiner forest and prize-collecting problems. In this paper, we propose and analyze a natural deterministic algorithm for PCSF that achieves a 2-approximate solution in polynomial time. This represents a significant improvement compared to the previously best known algorithm with a 2.54-approximation factor developed by Hajiaghayi and Jain [19] in 2006. Furthermore, Könemann, Olver, Pashkovich, Ravi, Swamy, and Vygen [24] have established an integrality gap of at least 9/4 for the natural LP relaxation for PCSF. However, we surpass this gap through the utilization of a combinatorial algorithm and a novel analysis technique. Since 2 is the best known approximation guarantee for Steiner forest problem [2] (see also [15]), which is a special case of PCSF, our result matches this factor and closes the gap between the Steiner forest problem and its generalized version, PCSF.
-
-[This conference version provides the essential ideas and results, with the full technical details available in the journal version.]`
-  },
-  {
     id: 4,
-    order: 3,
+    order: 1,
     slug: "bi-criteria-metric-distortion",
     title: "Bi-Criteria Metric Distortion",
-    venue: "arXiv preprint",
-    year: "2024",
+    venues: ["arXiv preprint - 2024"],
     url: "https://arxiv.org/abs/2412.10671",
     content: `## Abstract
 
@@ -111,8 +97,7 @@ This paper explores whether one can obtain a better approximation compared to an
     order: 5,
     slug: "breaking-barrier",
     title: "Breaking a Long-Standing Barrier: 2-$\\varepsilon$ Approximation for Steiner Forest",
-    venue: "IEEE Symposium on Foundations of Computer Science (FOCS)",
-    year: "2025",
+    venues: ["IEEE Symposium on Foundations of Computer Science (FOCS) - 2025"],
     url: "https://arxiv.org/abs/2504.11398",
     videoUrl: "https://player.vimeo.com/video/1111232482",
     badge: "best-paper",
@@ -121,6 +106,22 @@ This paper explores whether one can obtain a better approximation compared to an
 The Steiner Forest problem, also known as the Generalized Steiner Tree problem, is a fundamental optimization problem on edge-weighted graphs where, given a set of vertex pairs, the goal is to select a minimum-cost subgraph such that each pair is connected. This problem generalizes the Steiner Tree problem, first introduced in 1811, for which the best known approximation factor is 1.39 [Byrka, Grandoni, Rothvoß, and Sanità, 2010] (Best Paper award, STOC 2010).
 The celebrated work of [Agrawal, Klein, and Ravi, 1989] (30-Year Test-of-Time award, STOC 2023), along with refinements by [Goemans and Williamson, 1992] (SICOMP'95), established a 2-approximation for Steiner Forest over 35 years ago. Jain's (FOCS'98) pioneering iterative rounding techniques later extended these results to higher connectivity settings. Despite the long-standing importance of this problem, breaking the approximation factor of 2 has remained a major challenge, raising suspicions that achieving a better factor -- similar to Vertex Cover -- might indeed be hard. Notably, fundamental works, including those by Gupta and Kumar (STOC'15) and Groß et al. (ITCS'18), introduced 96- and 69-approximation algorithms, possibly with the hope of paving the way for a breakthrough in achieving a constant-factor approximation below 2 for the Steiner Forest problem.
 In this paper, we break the approximation barrier of 2 by designing a novel deterministic algorithm that achieves a 2−10−11 approximation for this fundamental problem. As a key component of our approach, we also introduce a novel dual-based local search algorithm for the Steiner Tree problem with an approximation guarantee of 1.943, which is of independent interest.
+
+[Full paper available on arXiv]`
+  },
+  {
+    id: 6,
+    order: 3.2,
+    slug: "prize-collecting-forest-submodular-penalties",
+    title: "Prize-Collecting Forest with Submodular Penalties: Improved Approximation",
+    venues: ["International Conference on Parallel Processing (IPCO) - 2025"],
+    url: "https://arxiv.org/abs/2504.15445",
+    content: `## Abstract
+    Constrained forest problems form a class of graph problems where specific connectivity requirements for certain cuts within the graph must be satisfied by selecting the minimum-cost set of edges. The prize-collecting version of these problems introduces flexibility by allowing penalties to be paid to ignore some connectivity requirements.
+
+Goemans and Williamson [8] introduced a general technique and developed a 2-approximation algorithm for constrained forest problems. Further, Sharma, Swamy, and Williamson [16] extended this work by developing a 2.54-approximation algorithm for the prize-collecting version of these problems. Motivated by the generality of their framework, which includes problems such as Steiner trees, Steiner forests, and their variants, we pursued further exploration.
+
+We present a significant improvement by achieving a 2-approximation algorithm for this general model, matching the approximation factor of the constrained forest problems. Notably, the best-known approximation factor for a specific case, the Steiner forest, has remained at 2 since it was established in 1991 by Agrawal, Klein, and Ravi [1].
 
 [Full paper available on arXiv]`
   }

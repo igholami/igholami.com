@@ -18,9 +18,11 @@ const PublicationCard = ({ publication }) => {
       >
         {publication.title}
       </Title>
-      <Text className="text-gray-400 text-sm">
-        {publication.venue} {publication.year}
-      </Text>
+      <div className="text-gray-400 text-sm">
+        {publication.venues.map((v) => (
+          <div key={v}>{v}</div>
+        ))}
+      </div>
     </Card>
   )
 }

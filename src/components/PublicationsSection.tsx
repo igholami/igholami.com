@@ -4,7 +4,7 @@ import { publications } from '../data/personalData'
 import { useTheme } from '../contexts/ThemeContext'
 import { MathRenderer } from './common'
 
-const { Title, Text } = Typography
+const { Title } = Typography
 
 const PublicationsSection: React.FC = () => {
   // Sort publications by order field
@@ -83,11 +83,13 @@ const PublicationsSection: React.FC = () => {
                         {<MathRenderer>{publication.title}</MathRenderer>}
                       </Link>
                     </Title>
-                    <Text className="text-gray-300 text-lg font-mono">
-                      <span className="text-green-400">@</span>{publication.venue} 
-                      <span className="text-green-400 mx-1">|</span> 
-                      <span className="text-green-100">{publication.year}</span>
-                    </Text>
+                    <div className="text-gray-300 text-lg font-mono">
+                      {publication.venues.map((v) => (
+                        <div key={v}>
+                          <span className="text-green-400">@</span>{v}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                   {getBadgeInfo(publication.badge) && (
                     <Badge 
@@ -125,9 +127,11 @@ const PublicationsSection: React.FC = () => {
                         {<MathRenderer>{publication.title}</MathRenderer>}
                       </Link>
                     </Title>
-                    <Text className="text-blue-100 text-lg">
-                      {publication.venue} • {publication.year}
-                    </Text>
+                    <div className="text-blue-100 text-lg">
+                      {publication.venues.map((v) => (
+                        <div key={v}>{v}</div>
+                      ))}
+                    </div>
                   </div>
                   {getBadgeInfo(publication.badge) && (
                     <Badge 

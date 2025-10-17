@@ -18,8 +18,7 @@ export interface Publication {
   order: number;
   slug: string;
   title: string;
-  venue: string;
-  year: string;
+  venues: string[];
   url: string;
   content: string;
   videoUrl?: string;

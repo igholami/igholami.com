@@ -42,6 +42,16 @@ self.addEventListener('fetch', (event) => {
   // Skip non-GET requests
   if (request.method !== 'GET') return;
   
+  // Skip external CDN resources to avoid CORS issues
+  const url = new URL(request.url);
+  if (url.origin !== location.origin && 
+      (url.hostname.includes('cdn.jsdelivr.net') || 
+       url.hostname.includes('fonts.googleapis.com') || 
+       url.hostname.includes('fonts.gstatic.com') ||
+       url.hostname.includes('www.googletagmanager.com'))) {
+    return; // Let external resources load normally without service worker interference
+  }
+  
   // Handle different types of requests
   if (request.destination === 'document') {
     // HTML pages - network first, fallback to cache

@@ -7,7 +7,7 @@ import { publications } from '../data/personalData'
 import { Container, MathRenderer } from './common'
 import { useTheme } from '../contexts/ThemeContext'
 
-const { Title, Text } = Typography
+const { Title } = Typography
 const { Content } = Layout
 
 const PublicationPage: React.FC = () => {
@@ -117,19 +117,16 @@ const PublicationPage: React.FC = () => {
             <div className={`flex items-center space-x-2 mb-4 ${
               isGeeky ? 'font-mono' : 'font-normal'
             }`}>
-              <Text strong className={`text-base ${
+              <div className={`text-base ${
                 isGeeky ? 'text-green-200' : 'text-blue-200'
               }`}>
-                {isGeeky && <span className="text-green-400">@</span>}{publication.venue}
-              </Text>
-              <Text className={isGeeky ? 'text-green-400' : 'text-blue-400'}>
-                {isGeeky ? ' | ' : ' • '}
-              </Text>
-              <Text className={`text-base ${
-                isGeeky ? 'text-green-200' : 'text-blue-200'
-              }`}>
-                {publication.year}
-              </Text>
+                {publication.venues.map((v) => (
+                  <div key={v}>
+                    {isGeeky && <span className="text-green-400">@</span>}{v}
+                  </div>
+                ))}
+              </div>
+              
             </div>
             <div className="mb-8">
               <Button 
