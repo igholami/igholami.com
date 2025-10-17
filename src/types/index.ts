@@ -23,6 +23,7 @@ export interface Publication {
   url: string;
   content: string;
   videoUrl?: string;
+  badge?: 'best-paper' | 'special-issue';
 }
 
 export type Award = string;
@@ -34,4 +35,10 @@ export interface MiniProject {
   githubUrl: string;
   technologies?: string[];
   geekyOnly?: boolean;
+}
+
+export interface NewsItem {
+  id: number;
+  title: string;
+  date: string;
 }

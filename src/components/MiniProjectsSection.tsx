@@ -51,7 +51,7 @@ const MiniProjectsSection: React.FC = () => {
                 <div className="flex items-start gap-2">
                   <div className="flex-1">
                     <Title 
-                      level={5} 
+                      level={4} 
                       className="m-0 mb-2 font-mono"
                     >
                       <a 
@@ -66,7 +66,7 @@ const MiniProjectsSection: React.FC = () => {
                         {project.name}
                       </a>
                     </Title>
-                    <Text className="text-gray-400 text-sm font-mono">
+                    <Text className="text-gray-300 text-base font-mono">
                       {project.description}
                     </Text>
                     {project.technologies && (
@@ -86,7 +86,7 @@ const MiniProjectsSection: React.FC = () => {
               ) : (
                 <div>
                   <Title 
-                    level={5} 
+                    level={4} 
                     className="m-0 mb-1"
                   >
                     <a 
@@ -101,7 +101,7 @@ const MiniProjectsSection: React.FC = () => {
                       {project.name}
                     </a>
                   </Title>
-                  <Text className="text-blue-100 text-sm">
+                  <Text className="text-blue-50 text-base">
                     {project.description}
                   </Text>
                   {project.technologies && (

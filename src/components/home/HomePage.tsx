@@ -4,6 +4,7 @@ import HeroSection from './HeroSection'
 import Container from '../common/Container'
 
 // Lazy load sections to reduce initial bundle size
+const NewsSection = lazy(() => import('../NewsSection'))
 const PublicationsSection = lazy(() => import('../PublicationsSection'))
 const AwardsSection = lazy(() => import('../AwardsSection'))
 const MiniProjectsSection = lazy(() => import('../MiniProjectsSection'))
@@ -32,6 +33,11 @@ const HomePage: React.FC = () => {
           <Suspense fallback={<div className="text-center py-8 text-gray-400">Loading...</div>}>
             <Container>
               <AwardsSection />
+            </Container>
+          </Suspense>
+          <Suspense fallback={<div className="text-center py-8 text-gray-400">Loading...</div>}>
+            <Container>
+              <NewsSection />
             </Container>
           </Suspense>
           <Suspense fallback={<div className="text-center py-8 text-gray-400">Loading...</div>}>

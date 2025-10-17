@@ -1,4 +1,4 @@
-import { Typography, Card } from 'antd'
+import { Typography, Card, Badge } from 'antd'
 import { Link } from 'react-router-dom'
 import { publications } from '../data/personalData'
 import { useTheme } from '../contexts/ThemeContext'
@@ -10,6 +10,28 @@ const PublicationsSection: React.FC = () => {
   // Sort publications by order field
   const sortedPublications = [...publications].sort((a, b) => b.order - a.order)
   const { isGeeky } = useTheme()
+
+  // Helper function to get badge info
+  const getBadgeInfo = (badge?: 'best-paper' | 'special-issue') => {
+    if (!badge) return null
+    
+    switch (badge) {
+      case 'best-paper':
+        return {
+          text: 'BEST PAPER',
+          color: isGeeky ? '#dc2626' : '#ef4444', // red colors for awards
+          textColor: '#fff'
+        }
+      case 'special-issue':
+        return {
+          text: 'SPECIAL ISSUE',
+          color: isGeeky ? '#a855f7' : '#8b5cf6', // purple colors
+          textColor: '#fff'
+        }
+      default:
+        return null
+    }
+  }
 
   return (
     <div>
@@ -45,48 +67,86 @@ const PublicationsSection: React.FC = () => {
               }`}
             >
               {isGeeky ? (
-                <div className="flex items-start gap-2">
+                <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
                     <Title 
-                      level={5} 
+                      level={3} 
                       className="m-0 mb-2 font-mono"
                     >
                       <Link 
                         to={`/publication/${publication.slug}`}
                         className="no-underline transition-colors duration-300 hover:underline"
-                        style={{ color: '#86efac' }}
-                        onMouseEnter={(e) => e.currentTarget.style.color = '#4ade80'}
-                        onMouseLeave={(e) => e.currentTarget.style.color = '#86efac'}
+                        style={{ color: '#4ade80' }}
+                        onMouseEnter={(e) => e.currentTarget.style.color = '#22c55e'}
+                        onMouseLeave={(e) => e.currentTarget.style.color = '#4ade80'}
                       >
                         {<MathRenderer>{publication.title}</MathRenderer>}
                       </Link>
                     </Title>
-                    <Text className="text-gray-400 text-sm font-mono">
+                    <Text className="text-gray-300 text-lg font-mono">
                       <span className="text-green-400">@</span>{publication.venue} 
                       <span className="text-green-400 mx-1">|</span> 
-                      <span className="text-green-200">{publication.year}</span>
+                      <span className="text-green-100">{publication.year}</span>
                     </Text>
                   </div>
+                  {getBadgeInfo(publication.badge) && (
+                    <Badge 
+                      count={getBadgeInfo(publication.badge)!.text}
+                      style={{ 
+                        backgroundColor: getBadgeInfo(publication.badge)!.color,
+                        color: getBadgeInfo(publication.badge)!.textColor,
+                        fontSize: '11px',
+                        fontWeight: 'bold',
+                        height: '24px',
+                        lineHeight: '24px',
+                        minWidth: '80px',
+                        borderRadius: '12px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }} 
+                    />
+                  )}
                 </div>
               ) : (
-                <div>
-                  <Title 
-                    level={5} 
-                    className="m-0 mb-1"
-                  >
-                    <Link 
-                      to={`/publication/${publication.slug}`}
-                      className="no-underline transition-colors duration-300 hover:underline"
-                      style={{ color: '#93c5fd' }}
-                      onMouseEnter={(e) => e.currentTarget.style.color = '#60a5fa'}
-                      onMouseLeave={(e) => e.currentTarget.style.color = '#93c5fd'}
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <Title 
+                      level={3} 
+                      className="m-0 mb-1"
                     >
-                      {<MathRenderer>{publication.title}</MathRenderer>}
-                    </Link>
-                  </Title>
-                  <Text className="text-blue-100 text-sm">
-                    {publication.venue} • {publication.year}
-                  </Text>
+                      <Link 
+                        to={`/publication/${publication.slug}`}
+                        className="no-underline transition-colors duration-300 hover:underline"
+                        style={{ color: '#93c5fd' }}
+                        onMouseEnter={(e) => e.currentTarget.style.color = '#60a5fa'}
+                        onMouseLeave={(e) => e.currentTarget.style.color = '#93c5fd'}
+                      >
+                        {<MathRenderer>{publication.title}</MathRenderer>}
+                      </Link>
+                    </Title>
+                    <Text className="text-blue-100 text-lg">
+                      {publication.venue} • {publication.year}
+                    </Text>
+                  </div>
+                  {getBadgeInfo(publication.badge) && (
+                    <Badge 
+                      count={getBadgeInfo(publication.badge)!.text}
+                      style={{ 
+                        backgroundColor: getBadgeInfo(publication.badge)!.color,
+                        color: getBadgeInfo(publication.badge)!.textColor,
+                        fontSize: '11px',
+                        fontWeight: 'bold',
+                        height: '24px',
+                        lineHeight: '24px',
+                        minWidth: '80px',
+                        borderRadius: '12px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }} 
+                    />
+                  )}
                 </div>
               )}
             </div>

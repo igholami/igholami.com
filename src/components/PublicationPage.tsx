@@ -1,4 +1,4 @@
-import { Typography, Button, Card, Layout } from 'antd'
+import { Typography, Button, Card, Layout, Badge } from 'antd'
 import { ArrowLeftOutlined } from '@ant-design/icons'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
@@ -16,6 +16,28 @@ const PublicationPage: React.FC = () => {
   const { isGeeky } = useTheme()
   
   const publication = publications.find(pub => pub.slug === slug)
+
+  // Helper function to get badge info
+  const getBadgeInfo = (badge?: 'best-paper' | 'special-issue') => {
+    if (!badge) return null
+    
+    switch (badge) {
+      case 'best-paper':
+        return {
+          text: 'BEST PAPER',
+          color: isGeeky ? '#dc2626' : '#ef4444', // red colors for awards
+          textColor: '#fff'
+        }
+      case 'special-issue':
+        return {
+          text: 'SPECIAL ISSUE',
+          color: isGeeky ? '#a855f7' : '#8b5cf6', // purple colors
+          textColor: '#fff'
+        }
+      default:
+        return null
+    }
+  }
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -66,11 +88,32 @@ const PublicationPage: React.FC = () => {
                 // publication.h
               </div>
             )}
-            <Title level={1} className={`my-2 text-4xl ${
-              isGeeky ? 'font-mono text-green-300' : 'font-normal text-blue-300'
-            }`}>
-              {isGeeky && <span className="text-green-400">&gt;</span>} {<MathRenderer>{publication.title}</MathRenderer>}
-            </Title>
+            <div className="flex items-start justify-between gap-4 mb-4">
+              <Title level={1} className={`my-2 text-4xl flex-1 ${
+                isGeeky ? 'font-mono text-green-300' : 'font-normal text-blue-300'
+              }`}>
+                {isGeeky && <span className="text-green-400">&gt;</span>} {<MathRenderer>{publication.title}</MathRenderer>}
+              </Title>
+              {getBadgeInfo(publication.badge) && (
+                  <Badge 
+                    count={getBadgeInfo(publication.badge)!.text}
+                    style={{ 
+                      backgroundColor: getBadgeInfo(publication.badge)!.color,
+                      color: getBadgeInfo(publication.badge)!.textColor,
+                      fontSize: '13px',
+                      fontWeight: 'bold',
+                      height: '28px',
+                      lineHeight: '28px',
+                      minWidth: '100px',
+                      borderRadius: '14px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginTop: '8px'
+                    }} 
+                  />
+              )}
+            </div>
             <div className={`flex items-center space-x-2 mb-4 ${
               isGeeky ? 'font-mono' : 'font-normal'
             }`}>

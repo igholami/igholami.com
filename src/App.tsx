@@ -3,13 +3,13 @@ import HomePage from './components/home/HomePage'
 import PublicationPage from './components/PublicationPage'
 import NotFoundPage from './components/NotFoundPage'
 import { ThemeProvider } from './contexts/ThemeContext'
-import { ThemeToggle } from './components/common'
+import { CountdownBar } from './components/common'
 
 function App(): React.JSX.Element {
   return (
     <ThemeProvider>
       <Router>
-        <ThemeToggle />
+        <CountdownBar />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/publication/:slug" element={<PublicationPage />} />

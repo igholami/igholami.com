@@ -28,12 +28,12 @@ const HeroSection: React.FC = () => {
           </div>
         </>
       )}
-      <div className="flex flex-col gap-4 w-2/3">
-        <Title level={1} className={`text-4xl ${
+      <div className="flex flex-col gap-8 w-2/3">
+        <h1 className={`${
           isGeeky 
-            ? 'font-mono text-green-300' 
-            : 'font-light text-blue-300'
-        }`}>
+            ? 'font-mono text-green-200' 
+            : 'font-light text-blue-200'
+        }`} style={{ fontSize: '2.5rem', lineHeight: '1.1', margin: 0, fontWeight: 'inherit' }}>
           {isGeeky ? (
             <>
               <span className="text-green-400">class</span> {personalInfo.name.replace(' ', '')} <span className="text-green-400">{'{'}</span>
@@ -41,12 +41,12 @@ const HeroSection: React.FC = () => {
           ) : (
             personalInfo.name
           )}
-        </Title>
-        <Title level={3} className={`text-2xl ${
+        </h1>
+        <h3 className={`${
           isGeeky 
-            ? 'font-mono text-green-200 ml-4' 
-            : 'font-light text-blue-200'
-        }`}>
+            ? 'font-mono text-green-100 ml-4' 
+            : 'font-light text-blue-100'
+        }`} style={{ fontSize: '1.5rem', lineHeight: '1.2', margin: 0, fontWeight: 'inherit' }}>
           {isGeeky ? (
             <>
               <span className="text-green-400">public:</span> {personalInfo.title}
@@ -54,23 +54,23 @@ const HeroSection: React.FC = () => {
           ) : (
             personalInfo.title
           )}
-        </Title>
-        <Paragraph className={`text-lg ${
+        </h3>
+        <p className={`${
           isGeeky 
-            ? 'font-mono text-gray-300 ml-4 border-l-2 border-green-400/30 pl-4' 
-            : 'text-blue-100'
-        }`}>
+            ? 'font-mono text-gray-200 ml-4 border-l-2 border-green-400/30 pl-4' 
+            : 'text-blue-50'
+        }`} style={{ fontSize: '1.1rem', lineHeight: '1.4', margin: 0 }}>
           {isGeeky && <><span className="text-green-400">// About</span><br/></>}
           {personalInfo.bio}
-        </Paragraph>
-        <Paragraph className={`text-lg ${
+        </p>
+        <p className={`${
           isGeeky 
-            ? 'font-mono text-gray-300 ml-4 border-l-2 border-green-400/30 pl-4' 
-            : 'text-blue-100'
-        }`}>
+            ? 'font-mono text-gray-200 ml-4 border-l-2 border-green-400/30 pl-4' 
+            : 'text-blue-50'
+        }`} style={{ fontSize: '1.1rem', lineHeight: '1.4', margin: 0 }}>
           {isGeeky && <><span className="text-green-400">// Research Focus</span><br/></>}
           {personalInfo.researchFocus}
-        </Paragraph>
+        </p>
         <div className={isGeeky ? 'ml-4' : ''}>
           <SocialIcons justify="start" />
         </div>
@@ -126,10 +126,10 @@ const HeroSection: React.FC = () => {
             // profile.jpg
           </div>
         )}
-        <Title level={1} className={`text-2xl mb-2 text-center ${
+        <Title level={1} className={`text-4xl mb-2 text-center ${
           isGeeky 
-            ? 'text-cyan-300 font-mono' 
-            : 'text-white font-light'
+            ? 'text-cyan-200 font-mono' 
+            : 'text-blue-50 font-light'
         }`}>
           {isGeeky ? (
             <>
@@ -139,10 +139,10 @@ const HeroSection: React.FC = () => {
             personalInfo.name
           )}
         </Title>
-        <Title level={3} className={`text-lg mb-4 text-center ${
+        <Title level={3} className={`text-2xl mb-4 text-center ${
           isGeeky 
-            ? 'text-yellow-400 font-mono' 
-            : 'text-gray-300 font-light'
+            ? 'text-yellow-300 font-mono' 
+            : 'text-blue-200 font-light'
         }`}>
           {isGeeky ? (
             <>
@@ -152,18 +152,18 @@ const HeroSection: React.FC = () => {
             personalInfo.title
           )}
         </Title>
-        <Paragraph className={`text-sm max-w-2xl mx-auto mb-4 text-center ${
+        <Paragraph className={`text-lg max-w-2xl mx-auto mb-4 text-center ${
           isGeeky 
-            ? 'text-gray-300 font-mono border border-green-400/30 p-3' 
-            : 'text-gray-300'
+            ? 'text-gray-200 font-mono border border-green-400/30 p-3' 
+            : 'text-blue-100'
         }`}>
           {isGeeky && <><span className="text-green-400">// About</span><br/></>}
           {personalInfo.bio}
         </Paragraph>
-        <Paragraph className={`text-sm mb-6 text-center ${
+        <Paragraph className={`text-lg mb-6 text-center ${
           isGeeky 
-            ? 'text-gray-300 font-mono border border-green-400/30 p-3' 
-            : 'text-gray-300'
+            ? 'text-gray-200 font-mono border border-green-400/30 p-3' 
+            : 'text-blue-100'
         }`}>
           {isGeeky && <><span className="text-green-400">// Research Focus</span><br/></>}
           {personalInfo.researchFocus}

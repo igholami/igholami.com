@@ -1,4 +1,4 @@
-import type { PersonalInfo, SocialLink, Publication, Award, MiniProject } from '../types';
+import type { PersonalInfo, SocialLink, Publication, Award, MiniProject, NewsItem } from '../types';
 
 export const personalInfo: PersonalInfo = {
   name: "Iman Gholami",
@@ -82,6 +82,7 @@ Approximation algorithms for the prize-collecting Steiner forest (PCSF) problem 
     title: "2-Approximation for Prize-Collecting Steiner Forest",
     venue: "ACM-SIAM Symposium on Discrete Algorithms (SODA)",
     year: "2024",
+    badge: "special-issue",
     url: "https://epubs.siam.org/doi/abs/10.1137/1.9781611977912.25",
     content: `## Abstract
 
@@ -110,10 +111,11 @@ This paper explores whether one can obtain a better approximation compared to an
     order: 5,
     slug: "breaking-barrier",
     title: "Breaking a Long-Standing Barrier: 2-$\\varepsilon$ Approximation for Steiner Forest",
-    venue: "arXiv preprint",
+    venue: "IEEE Symposium on Foundations of Computer Science (FOCS)",
     year: "2025",
     url: "https://arxiv.org/abs/2504.11398",
     videoUrl: "https://player.vimeo.com/video/1111232482",
+    badge: "best-paper",
     content: `## Abstract
 
 The Steiner Forest problem, also known as the Generalized Steiner Tree problem, is a fundamental optimization problem on edge-weighted graphs where, given a set of vertex pairs, the goal is to select a minimum-cost subgraph such that each pair is connected. This problem generalizes the Steiner Tree problem, first introduced in 1811, for which the best known approximation factor is 1.39 [Byrka, Grandoni, Rothvoß, and Sanità, 2010] (Best Paper award, STOC 2010).
@@ -125,11 +127,12 @@ In this paper, we break the approximation barrier of 2 by designing a novel dete
 ]
 
 export const awards: Award[] = [
-  "2nd Place, ICPC North America South Division (2023)",
-  "3rd Place, Iranian National Scientific Olympiad (2021)",
+  "<strong>Best Paper Award, FOCS (2025)</strong>",
+  "<strong>2nd Place, ICPC North America South Division (2023)</strong>",
+  "3rd Place, Iranian National Scientific Olympiad in Computer Science and Engineering (undergraduate nationwide competition) (2021)",
   "2nd Place, ICPC Asia-West Regional Contest (2020)",
   "2nd Place, ICPC Asia-West Regional Contest (2017)",
-  "Silver Medal, International Olympiad in Informatics (IOI) (2017)",
+  "<strong>Silver Medal, International Olympiad in Informatics (IOI) (2017)</strong>",
   "Gold Medal, Iran National Olympiad in Informatics (INOI) (2016)",
   "Silver Medal, Iran National Olympiad in Informatics (INOI) (2015)"
 ]
@@ -139,7 +142,7 @@ export const miniProjects: MiniProject[] = [
     id: 1,
     name: "Metachamber - Metadata Discovery Platform",
     description: "AI-powered platform for discovering and generating metadata descriptions automatically.",
-    githubUrl: "https://github.com/igholami/metachamber-back",
+    githubUrl: "https://github.com/metachamber/metachamber-back",
     technologies: ["Python", "Django REST Framework", "Vue.js", "ChatGPT"]
   },
   {
@@ -160,7 +163,7 @@ export const miniProjects: MiniProject[] = [
   {
     id: 4,
     name: "Say the Lyrics - Chrome Extension",
-    description: "A Chrome extension to play “Don’t Forget the Lyrics!” using Spotify’s lyrics feature.",
+    description: "A Chrome extension to play \"Don't Forget the Lyrics!\" using Spotify's lyrics feature.",
     githubUrl: "https://github.com/igholami/say-the-lyrics",
     technologies: ["JavaScript", "CSS", "Chrome Extension"],
     geekyOnly: true
@@ -180,6 +183,44 @@ export const miniProjects: MiniProject[] = [
     githubUrl: "https://github.com/igholami/swan",
     technologies: ["Vue.js", "Quasar", "JavaScript", "HTML", "Python", "Django"],
     geekyOnly: true
+  }
+]
+
+export const news: NewsItem[] = [
+  {
+    id: 1,
+    title: "Won best paper award at FOCS",
+    date: "Sep 14, 2025"
+  },
+  {
+    id: 2,
+    title: "Paper \"Breaking a Long-Standing Barrier: 2-ε Approximation for Steiner Forest\" accepted at FOCS",
+    date: "Jul 8, 2025"
+  },
+  {
+    id: 3,
+    title: "Started internship at <a href='https://axal.ai' target='_blank' rel='noopener noreferrer'>Axal.ai</a>",
+    date: "May 27, 2025"
+  },
+  {
+    id: 4,
+    title: "Paper \"2-Approximation for Prize-Collecting Steiner Forest\" accepted at JACM",
+    date: "Mar 1, 2025"
+  },
+  {
+    id: 5,
+    title: "Paper \"Prize-Collecting Forest with Submodular Penalties: Improved Approximation\" accepted at IPCO",
+    date: "Jan 22, 2025"
+  },
+  {
+    id: 6,
+    title: "Paper \"Prize-Collecting Steiner Tree: A 1.79 Approximation\" accepted at STOC",
+    date: "Feb 8, 2024"
+  },
+  {
+    id: 7,
+    title: "Paper \"2-Approximation for Prize-Collecting Steiner Forest\" accepted at SODA",
+    date: "Oct 10, 2024"
   }
 ]
  
