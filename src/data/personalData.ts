@@ -114,7 +114,7 @@ In this paper, we break the approximation barrier of 2 by designing a novel dete
     order: 3.2,
     slug: "prize-collecting-forest-submodular-penalties",
     title: "Prize-Collecting Forest with Submodular Penalties: Improved Approximation",
-    venues: ["International Conference on Parallel Processing (IPCO) - 2025"],
+    venues: ["Integer Programming and Combinatorial Optimization (IPCO) - 2025"],
     url: "https://arxiv.org/abs/2504.15445",
     content: `## Abstract
     Constrained forest problems form a class of graph problems where specific connectivity requirements for certain cuts within the graph must be satisfied by selecting the minimum-cost set of edges. The prize-collecting version of these problems introduces flexibility by allowing penalties to be paid to ignore some connectivity requirements.
