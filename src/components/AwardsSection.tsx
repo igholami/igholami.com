@@ -34,6 +34,11 @@ const AwardsSection: React.FC = () => {
           .awards-content-normal strong {
             font-weight: bold;
           }
+          .awards-content-geeky a, .awards-content-normal a {
+            color: inherit;
+            text-decoration: inherit;
+            cursor: pointer;
+          }
         `
       }} />
       <Title level={2} className={`text-3xl font-semibold mb-2 ${

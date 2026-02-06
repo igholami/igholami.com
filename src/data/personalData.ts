@@ -3,8 +3,8 @@ import type { PersonalInfo, SocialLink, Publication, Award, MiniProject, NewsIte
 export const personalInfo: PersonalInfo = {
   name: "Iman Gholami",
   title: "PhD Student in Computer Science",
-  bio: "Third-year PhD student at the University of Maryland, specializing in theoretical computer science, network design, and combinatorial optimization under the guidance of Prof. MohammadTaghi Hajiaghayi.",
-  researchFocus: "My research focuses on theoretical computer science, particularly in network design, graph theory, combinatorial optimization, and social choice theory. I am also exploring computational complexity theory with applications in quantum computing.",
+  bio: "Fourth-year PhD student at the University of Maryland, specializing in theoretical computer science, network design, and combinatorial optimization under the guidance of Prof. MohammadTaghi Hajiaghayi.",
+  researchFocus: "My research centers on theoretical computer science, with a focus on approximation algorithms for network design, graph theory, combinatorial optimization, and social choice theory.",
   email: "imangholami77@gmail.com",
   profileImage: "/profile.jpg"
 }
@@ -82,7 +82,7 @@ Approximation algorithms for the prize-collecting Steiner forest (PCSF) problem 
     order: 1,
     slug: "bi-criteria-metric-distortion",
     title: "Bi-Criteria Metric Distortion",
-    venues: ["arXiv preprint - 2024"],
+    venues: ["International Conference on Learning Representations (ICLR) - 2026"],
     url: "https://arxiv.org/abs/2412.10671",
     content: `## Abstract
 
@@ -117,7 +117,8 @@ In this paper, we break the approximation barrier of 2 by designing a novel dete
     venues: ["Integer Programming and Combinatorial Optimization (IPCO) - 2025"],
     url: "https://arxiv.org/abs/2504.15445",
     content: `## Abstract
-    Constrained forest problems form a class of graph problems where specific connectivity requirements for certain cuts within the graph must be satisfied by selecting the minimum-cost set of edges. The prize-collecting version of these problems introduces flexibility by allowing penalties to be paid to ignore some connectivity requirements.
+
+Constrained forest problems form a class of graph problems where specific connectivity requirements for certain cuts within the graph must be satisfied by selecting the minimum-cost set of edges. The prize-collecting version of these problems introduces flexibility by allowing penalties to be paid to ignore some connectivity requirements.
 
 Goemans and Williamson [8] introduced a general technique and developed a 2-approximation algorithm for constrained forest problems. Further, Sharma, Swamy, and Williamson [16] extended this work by developing a 2.54-approximation algorithm for the prize-collecting version of these problems. Motivated by the generality of their framework, which includes problems such as Steiner trees, Steiner forests, and their variants, we pursued further exploration.
 
@@ -128,12 +129,12 @@ We present a significant improvement by achieving a 2-approximation algorithm fo
 ]
 
 export const awards: Award[] = [
-  "<strong>Best Paper Award, FOCS (2025)</strong>",
-  "<strong>2nd Place, ICPC North America South Division (2023)</strong>",
+  "<a href='https://focs.computer.org/2025/best-paper-awards/' target='_blank' rel='noopener noreferrer'>Best Paper Award, FOCS (2025)</a>",
+  "<a href='https://icpc.global/ICPCID/BMWHX2B4QU37' target='_blank' rel='noopener noreferrer'>2nd Place, ICPC North America South Division (2023)</a>",
   "3rd Place, Iranian National Scientific Olympiad in Computer Science and Engineering (undergraduate nationwide competition) (2021)",
-  "2nd Place, ICPC Asia-West Regional Contest (2020)",
-  "2nd Place, ICPC Asia-West Regional Contest (2017)",
-  "<strong>Silver Medal, International Olympiad in Informatics (IOI) (2017)</strong>",
+  "<a href='https://icpc.global/ICPCID/BMWHX2B4QU37' target='_blank' rel='noopener noreferrer'>2nd Place, ICPC Asia-West Regional Contest (2020)</a>",
+  "<a href='https://icpc.global/ICPCID/BMWHX2B4QU37' target='_blank' rel='noopener noreferrer'>2nd Place, ICPC Asia-West Regional Contest (2017)</a>",
+  "<a href='https://stats.ioinformatics.org/people/6245' target='_blank' rel='noopener noreferrer'>Silver Medal, International Olympiad in Informatics (IOI) (2017)</a>",
   "Gold Medal, Iran National Olympiad in Informatics (INOI) (2016)",
   "Silver Medal, Iran National Olympiad in Informatics (INOI) (2015)"
 ]
@@ -188,6 +189,11 @@ export const miniProjects: MiniProject[] = [
 ]
 
 export const news: NewsItem[] = [
+  {
+    id: 0,
+    title: "Paper \"Bi-Criteria Metric Distortion\" accepted at ICLR",
+    date: "Jan 26, 2026"
+  },
   {
     id: 1,
     title: "Won best paper award at FOCS",
