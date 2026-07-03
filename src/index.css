@@ -1,16 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  line-height: 1.5;
   font-weight: 400;
-  
   color-scheme: dark;
-  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 17px;
 }
 
 html, body {
@@ -19,257 +18,70 @@ html, body {
 }
 
 body {
-  background-color: #0a0a0a;
-  color: #ffffff;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #111111;
+  color: #e8e6e3;
+  margin: 0;
 }
 
 #root {
   min-height: 100vh;
-  background-color: #0a0a0a;
+  background-color: #111111;
 }
 
-/* Ant Design dark theme overrides */
-.dark-layout {
-  background-color: #0a0a0a;
+a {
+  color: #4a9eff;
+  text-decoration: none;
 }
 
-.dark-layout .ant-layout {
-  background-color: #0a0a0a !important;
+a:hover {
+  text-decoration: underline;
 }
 
-.dark-layout .ant-layout-content {
-  background-color: #0a0a0a !important;
+h1, h2, h3, h4 {
+  font-family: inherit;
+  color: #e8e6e3;
+  font-weight: 700;
 }
 
-.dark-layout .ant-typography {
-  color: #ffffff !important;
+h2 {
+  border-bottom: 1px solid #333;
+  padding-bottom: 3px;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
 }
 
-.dark-layout .ant-typography.ant-typography-caption {
-  color: #b0b0b0 !important;
+h3 {
+  font-size: 1.05rem;
+  margin: 0;
 }
 
-.dark-layout .ant-card {
-  background-color: #1f1f1f !important;
-  border-color: #333333 !important;
+p {
+  margin: 0.4rem 0;
 }
 
-.dark-layout .ant-card-body {
-  color: #ffffff !important;
+ul {
+  padding-left: 0;
+  margin: 0.25rem 0;
+  list-style: none;
 }
 
-
-
-.dark-layout .ant-avatar {
-  border-color: #333333 !important;
+li {
+  margin-bottom: 0.3rem;
 }
 
-.dark-layout .ant-btn {
-  background-color: #1f1f1f !important;
-  border-color: #333333 !important;
-  color: #ffffff !important;
-}
-
-.dark-layout .ant-btn:hover {
-  background-color: #333333 !important;
-  border-color: #555555 !important;
-}
-
-
-/* Ensure all buttons in geeky mode have consistent styling */
-.dark-layout .ant-btn[class*="font-mono"] {
-  font-family: 'Courier New', monospace !important;
-  letter-spacing: 0.5px !important;
-  text-shadow: 0 0 2px currentColor !important;
-}
-
-/* Geeky button hover effects */
-.dark-layout .ant-btn.font-mono:hover {
-  text-shadow: 0 0 4px currentColor !important;
-  box-shadow: 0 0 5px currentColor !important;
-}
-
-/* Geeky theme for all interactive elements */
-.dark-layout .ant-btn.font-mono,
-.dark-layout .ant-btn[class*="font-mono"] {
-  transition: all 0.3s ease !important;
+hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 1.5rem 0;
 }
 
 
-/* Social Icons Styling */
-.social-icon-link i {
-  font-style: normal !important;
+/* KaTeX inherits color */
+.katex, .katex * {
+  color: inherit !important;
 }
 
-/* Ensure Academicons are visible in dark theme */
-.ai {
-  font-family: 'Academicons' !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  line-height: 1 !important;
-  text-rendering: auto !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
-}
-
-/* Math rendering styles */
 .katex {
-  font-size: 1.1em;
-  line-height: 1.2;
-  color: inherit !important;
-}
-
-.katex-display {
-  margin: 1.5em 0;
-  text-align: center;
-}
-
-.katex-display .katex {
-  font-size: 1.2em;
-}
-
-/* Force all KaTeX elements to inherit color */
-.katex * {
-  color: inherit !important;
-}
-
-.katex .mord,
-.katex .mbin,
-.katex .mrel,
-.katex .mop,
-.katex .mopen,
-.katex .mclose,
-.katex .mpunct,
-.katex .minner,
-.katex .mord,
-.katex .mbin,
-.katex .mrel,
-.katex .mop,
-.katex .mopen,
-.katex .mclose,
-.katex .mpunct,
-.katex .minner,
-.katex .mord,
-.katex .mbin,
-.katex .mrel,
-.katex .mop,
-.katex .mopen,
-.katex .mclose,
-.katex .mpunct,
-.katex .minner {
-  color: inherit !important;
-}
-
-/* Specific overrides for common KaTeX elements */
-.katex .mord,
-.katex .mbin,
-.katex .mrel,
-.katex .mop,
-.katex .mopen,
-.katex .mclose,
-.katex .mpunct,
-.katex .minner {
-  color: inherit !important;
-}
-
-/* Ensure all text elements inherit color */
-.katex .mtext,
-.katex .mord,
-.katex .mbin,
-.katex .mrel,
-.katex .mop,
-.katex .mopen,
-.katex .mclose,
-.katex .mpunct,
-.katex .minner,
-.katex .mord,
-.katex .mbin,
-.katex .mrel,
-.katex .mop,
-.katex .mopen,
-.katex .mclose,
-.katex .mpunct,
-.katex .minner {
-  color: inherit !important;
-}
-
-/* Math component specific styling */
-.math-inline,
-.math-block {
-  color: inherit !important;
-}
-
-.math-inline .katex,
-.math-block .katex {
-  color: inherit !important;
-}
-
-.math-inline .katex *,
-.math-block .katex * {
-  color: inherit !important;
-}
-
-/* Ensure math inherits from parent text color */
-.katex-display,
-.katex-display * {
-  color: inherit !important;
-}
-
-/* Override any KaTeX default colors */
-.katex .mord,
-.katex .mbin,
-.katex .mrel,
-.katex .mop,
-.katex .mopen,
-.katex .mclose,
-.katex .mpunct,
-.katex .minner,
-.katex .mtext,
-.katex .mord,
-.katex .mbin,
-.katex .mrel,
-.katex .mop,
-.katex .mopen,
-.katex .mclose,
-.katex .mpunct,
-.katex .minner {
-  color: inherit !important;
-}
-
-/* Ensure math inherits from Ant Design Typography */
-.ant-typography .katex,
-.ant-typography .katex * {
-  color: inherit !important;
-}
-
-.ant-typography h1 .katex,
-.ant-typography h1 .katex *,
-.ant-typography h2 .katex,
-.ant-typography h2 .katex *,
-.ant-typography h3 .katex,
-.ant-typography h3 .katex *,
-.ant-typography h4 .katex,
-.ant-typography h4 .katex *,
-.ant-typography h5 .katex,
-.ant-typography h5 .katex *,
-.ant-typography h6 .katex,
-.ant-typography h6 .katex *,
-.ant-typography p .katex,
-.ant-typography p .katex *,
-.ant-typography li .katex,
-.ant-typography li .katex *,
-.ant-typography strong .katex,
-.ant-typography strong .katex *,
-.ant-typography em .katex,
-.ant-typography em .katex * {
-  color: inherit !important;
-}
-
-/* Force inheritance for all KaTeX elements */
-.katex,
-.katex *,
-.katex-display,
-.katex-display * {
-  color: inherit !important;
+  font-size: 1em;
 }
