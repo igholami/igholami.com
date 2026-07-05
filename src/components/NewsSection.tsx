@@ -14,11 +14,11 @@ const NewsSection: React.FC = () => {
       <h2>News</h2>
       <ul>
         {sorted.map((item) => (
-          <li key={item.id}>
-            <span style={{ color: '#a8a29e', display: 'inline-block', minWidth: '105px' }}>
+          <li key={item.id} style={{ display: 'flex', gap: '0.5rem', alignItems: 'baseline' }}>
+            <span style={{ color: '#a8a29e', flex: '0 0 100px' }}>
               {shortDate(item.date)}
             </span>
-            <span dangerouslySetInnerHTML={{ __html: item.title }} />
+            <span style={{ flex: 1 }} dangerouslySetInnerHTML={{ __html: item.title }} />
           </li>
         ))}
       </ul>

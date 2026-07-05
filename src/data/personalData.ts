@@ -34,7 +34,8 @@ export const publications: Publication[] = [
     slug: "quiet-planting-ksat",
     title: "Quiet Planting for k-SAT, Multiple Solutions of Arbitrary Geometry",
     venues: ["Conference on Learning Theory (COLT) - 2026"],
-    url: "https://arxiv.org/abs/2606.15979",
+    url: "https://proceedings.mlr.press/v336/ahmadi26a.html",
+    links: [{ label: "COLT", url: "https://proceedings.mlr.press/v336/ahmadi26a.html" }],
     content: `## Abstract\n\n[Full paper available on arXiv.]`
   },
   {
@@ -43,7 +44,8 @@ export const publications: Publication[] = [
     slug: "bi-criteria-metric-distortion",
     title: "Bi-Criteria Metric Distortion",
     venues: ["International Conference on Learning Representations (ICLR) - 2026"],
-    url: "https://arxiv.org/abs/2412.10671",
+    url: "https://openreview.net/forum?id=QBgHVmvN5S",
+    links: [{ label: "ICLR", url: "https://openreview.net/forum?id=QBgHVmvN5S" }],
     content: `## Abstract\n\n[Full paper on arXiv.]`
   },
   {
@@ -52,7 +54,11 @@ export const publications: Publication[] = [
     slug: "breaking-barrier",
     title: "Breaking a Long-Standing Barrier: 2-$\\varepsilon$ Approximation for Steiner Forest",
     venues: ["IEEE Symposium on Foundations of Computer Science (FOCS) - 2025 (Best Paper Award)"],
-    url: "https://arxiv.org/abs/2504.11398",
+    url: "https://ieeexplore.ieee.org/document/11369093",
+    links: [
+      { label: "FOCS", url: "https://ieeexplore.ieee.org/document/11369093" },
+      { label: "arXiv", url: "https://arxiv.org/abs/2504.11398" }
+    ],
     videoUrl: "https://player.vimeo.com/video/1111232482",
     content: `## Abstract\n\n[Full paper on arXiv.]`
   },
@@ -66,6 +72,10 @@ export const publications: Publication[] = [
       "ACM-SIAM Symposium on Discrete Algorithms (SODA) - 2024"
     ],
     url: "https://doi.org/10.1145/3722551",
+    links: [
+      { label: "JACM", url: "https://doi.org/10.1145/3722551" },
+      { label: "SODA", url: "https://epubs.siam.org/doi/10.1137/1.9781611977912.25" }
+    ],
     content: `## Abstract\n\n[Available at JACM.]`
   },
   {
@@ -74,7 +84,11 @@ export const publications: Publication[] = [
     slug: "prize-collecting-forest-submodular-penalties",
     title: "Prize-Collecting Forest with Submodular Penalties: Improved Approximation",
     venues: ["Integer Programming and Combinatorial Optimization (IPCO) - 2025"],
-    url: "https://arxiv.org/abs/2504.15445",
+    url: "https://link.springer.com/chapter/10.1007/978-3-031-93112-3_2",
+    links: [
+      { label: "IPCO", url: "https://link.springer.com/chapter/10.1007/978-3-031-93112-3_2" },
+      { label: "arXiv", url: "https://arxiv.org/abs/2504.15445" }
+    ],
     content: `## Abstract\n\n[Full paper on arXiv.]`
   },
   {

@@ -23,6 +23,7 @@ export interface Publication {
   content: string;
   videoUrl?: string;
   badge?: 'best-paper' | 'special-issue';
+  links?: Array<{ label: string; url: string }>;
 }
 
 export type Award = string;

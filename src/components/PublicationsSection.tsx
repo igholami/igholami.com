@@ -35,6 +35,7 @@ const PublicationsSection: React.FC = () => {
           const parsed = pub.venues.map(parseVenue)
           const abbrs = parsed.map(p => p.abbr).filter(Boolean) as string[]
           const badges = parsed.map(p => p.badge).filter(Boolean) as string[]
+          const links = pub.links ?? abbrs.map(a => ({ label: a, url: pub.url }))
           return (
             <li key={pub.id} style={{ marginBottom: '0.7rem' }}>
               <div style={{ fontWeight: 600 }}>
@@ -42,13 +43,13 @@ const PublicationsSection: React.FC = () => {
               </div>
               <div style={{ color: '#a8a29e', fontSize: '0.95rem' }}>
                 {parsed.map(p => p.text).join('; ')}
-                {abbrs.length > 0 && (
+                {links.length > 0 && (
                   <>
                     {' '}
-                    [{abbrs.map((a, i) => (
-                      <span key={a}>
-                        <a href={pub.url} target="_blank" rel="noopener noreferrer">{a}</a>
-                        {i < abbrs.length - 1 && ', '}
+                    [{links.map((l, i) => (
+                      <span key={l.label}>
+                        <a href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a>
+                        {i < links.length - 1 && ', '}
                       </span>
                     ))}]
                   </>
