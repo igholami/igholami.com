@@ -104,7 +104,7 @@ export const publications: Publication[] = [
 
 export const awards: Award[] = [
   "Best Paper Award, FOCS (2025)",
-  "Competitive University Fellowships, UMD Dean's Fellowship & MPower Early Scholars Award",
+  "Competitive University Fellowships (UMD Dean's Fellowship, MPower Early Scholars Award)",
   "Silver Medal, International Olympiad in Informatics (IOI) (2017)",
   "2nd Place, ICPC North America South Division (2023)",
   "2nd Place, ICPC Asia-West Regional Contest (2017)",
