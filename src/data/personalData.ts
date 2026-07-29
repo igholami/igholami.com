@@ -104,10 +104,11 @@ export const publications: Publication[] = [
 
 export const awards: Award[] = [
   "Best Paper Award, FOCS (2025)",
-  "2nd Place, ICPC North America South Division (2023)",
-  "2nd Place, ICPC Asia-West Regional Contest (2020)",
+  "Competitive University Fellowships, UMD Dean's Fellowship & MPower Early Scholars Award",
   "Silver Medal, International Olympiad in Informatics (IOI) (2017)",
+  "2nd Place, ICPC North America South Division (2023)",
   "2nd Place, ICPC Asia-West Regional Contest (2017)",
+  "2nd Place, ICPC Asia-West Regional Contest (2020)",
   "Gold Medal, Iran National Olympiad in Informatics (INOI) (2016)"
 ]
 
