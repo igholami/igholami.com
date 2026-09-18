@@ -142,7 +142,7 @@ export const news: NewsItem[] = [
   },
   {
     id: 11,
-    title: "Started internship at Axiom (New York City)",
+    title: "Started internship at Intrinsic Technologies (Axiom), New York City",
     date: "Jun 8, 2026"
   },
   {
@@ -172,7 +172,7 @@ export const news: NewsItem[] = [
   },
   {
     id: 3,
-    title: "Started internship at Axal (San Francisco)",
+    title: "Started internship at Axal, San Francisco",
     date: "May 27, 2025"
   },
   {
