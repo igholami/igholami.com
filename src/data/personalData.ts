@@ -20,6 +20,65 @@ export const socialLinks: SocialLink[] = [
 
 export const publications: Publication[] = [
   {
+  id: 11,
+  order: -3,
+  slug: "nonuniform-buy-at-bulk",
+  title: "Nonuniform Buy-at-Bulk Network Design: Improved Approximation and LP Integrality Gap",
+  venues: [
+      "arXiv preprint (arXiv) - 2026"
+  ],
+  url: "https://arxiv.org/abs/2611.06894",
+  links: [
+      {
+          label: "arXiv",
+          url: "https://arxiv.org/abs/2611.06894"
+      },
+      {
+          label: "Lean formalization",
+          url: "https://github.com/igholami/buy-at-bulk-lean"
+      }
+  ],
+  content: "## Summary\n\nWe give a deterministic polynomial-time approximation algorithm for nonuniform buy-at-bulk network design, together with an improved integrality-gap bound for the natural multicommodity flow LP."
+  },
+  {
+  id: 10,
+  order: -2,
+  slug: "online-steiner-forest",
+  title: "The Tight Competitive Ratio of Greedy for Online Steiner Forest",
+  venues: [
+      "arXiv preprint (arXiv) - 2026"
+  ],
+  url: "https://arxiv.org/abs/2610.40569",
+  links: [
+      {
+          label: "arXiv",
+          url: "https://arxiv.org/abs/2610.40569"
+      },
+      {
+          label: "Lean formalization",
+          url: "https://github.com/igholami/online-steiner-forest-lean"
+      }
+  ],
+  content: "## Summary\n\nWe establish matching upper and lower bounds for the competitive ratio of the greedy algorithm for online Steiner forest."
+  },
+  {
+  id: 9,
+  order: -1,
+  slug: "constructive-arboricity",
+  title: "Constructive Arboricity in Almost-Linear Time for Dense Graphs",
+  venues: [
+      "arXiv preprint (arXiv) - 2026"
+  ],
+  url: "https://arxiv.org/abs/2610.13937",
+  links: [
+      {
+          label: "arXiv",
+          url: "https://arxiv.org/abs/2610.13937"
+      }
+  ],
+  content: "## Summary\n\nWe give an algorithm that computes exact arboricity and an optimal forest partition in almost-linear time for dense graphs, and an almost-linear-time algorithm using at most one more forest than optimal."
+  },
+  {
     id: 7,
     order: 0,
     slug: "beyond-the-library",

@@ -32,14 +32,21 @@ const PublicationPage: React.FC = () => {
 
       <div style={{ color: '#a8a29e', marginBottom: '0.75rem' }}>
         {publication.venues.map((v) => (
-          <div key={v}>{v}</div>
+          <div key={v}>{v.split(/(Best Paper Award)/g).map((part, i) =>
+            part === 'Best Paper Award'
+              ? <strong key={i} style={{ color: '#ff4d4f' }}>{part}</strong>
+              : part
+          )}</div>
         ))}
       </div>
 
       <p>
-        <a href={publication.url} target="_blank" rel="noopener noreferrer">
-          View paper &rarr;
-        </a>
+        {(publication.links ?? [{ label: 'View paper →', url: publication.url }]).map((link, i) => (
+          <span key={link.label}>
+            {i > 0 && ' · '}
+            <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
+          </span>
+        ))}
       </p>
 
       {publication.videoUrl && (

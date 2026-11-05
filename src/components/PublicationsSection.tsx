@@ -55,7 +55,7 @@ const PublicationsSection: React.FC = () => {
                   </>
                 )}
                 {badges.map(b => (
-                  <span key={b}> <strong>{b}</strong></span>
+                  <span key={b}> <strong style={/best paper/i.test(b) ? { color: '#ff4d4f' } : undefined}>{b}</strong></span>
                 ))}
               </div>
             </li>
