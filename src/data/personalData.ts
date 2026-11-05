@@ -32,10 +32,6 @@ export const publications: Publication[] = [
       {
           label: "arXiv",
           url: "https://arxiv.org/abs/2611.06894"
-      },
-      {
-          label: "Lean formalization",
-          url: "https://github.com/igholami/buy-at-bulk-lean"
       }
   ],
   content: "## Summary\n\nWe give a deterministic polynomial-time approximation algorithm for nonuniform buy-at-bulk network design, together with an improved integrality-gap bound for the natural multicommodity flow LP."
@@ -53,10 +49,6 @@ export const publications: Publication[] = [
       {
           label: "arXiv",
           url: "https://arxiv.org/abs/2610.40569"
-      },
-      {
-          label: "Lean formalization",
-          url: "https://github.com/igholami/online-steiner-forest-lean"
       }
   ],
   content: "## Summary\n\nWe establish matching upper and lower bounds for the competitive ratio of the greedy algorithm for online Steiner forest."
