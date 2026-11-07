@@ -8,7 +8,7 @@ const root = fileURLToPath(new URL('..', import.meta.url))
 const output = join(root, 'dist')
 const git = (args, cwd = root) => execFileSync('git', args, { cwd, encoding: 'utf8' }).trim()
 
-for (const file of ['index.html', 'CNAME', 'cv.pdf', 'work-cv.pdf']) {
+for (const file of ['index.html', 'CNAME', 'cv.pdf']) {
   if (!existsSync(join(output, file))) throw new Error(`Build output missing: ${file}. Run npm run build first.`)
 }
 

@@ -2,13 +2,11 @@
 
 ## Updating CV downloads
 
-The homepage links to both CV versions:
-
-- `public/cv.pdf`: academic CV, copied from `cv-academic/main.pdf` on `main`.
-- `public/work-cv.pdf`: work CV, copied from `cv-iman-gholami/dist/iman-gholami-cv.pdf` on `main`.
+The website publishes only the academic CV at `public/cv.pdf`, copied from
+`cv-academic/main.pdf` on `main`. The homepage CV link points to `/cv.pdf`.
 
 Keep `/cv.pdf` as the academic download to preserve existing links. After copying
-updated PDFs, run `npm run build`, then commit and push the source files.
+the updated PDF, run `npm run build`, then commit and push the source files.
 Publish the locally built site with:
 
 ```sh
