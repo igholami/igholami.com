@@ -1,0 +1,1 @@
+import{j as s,a as e}from"./home-B5MD1rRZ.js";const n=()=>s.jsxs("section",{children:[s.jsx("h2",{children:"Awards"}),s.jsx("ul",{children:e.map((r,a)=>s.jsx("li",{children:r},a))})]});export{n as A};

@@ -1,0 +1,9 @@
+# GitHub Pages SPA redirects
+# This ensures all routes fall back to index.html for React Router
+/*    /index.html   200
+
+# Specific redirects for common paths
+/publications    /index.html   200
+/awards         /index.html   200
+/cv            /index.html   200
+/404           /index.html   200
