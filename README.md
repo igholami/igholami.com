@@ -1,3 +1,20 @@
+# Iman Gholami — Website
+
+## Updating CV downloads
+
+The homepage links to both CV versions:
+
+- `public/cv.pdf`: academic CV, copied from `cv-academic/main.pdf` on `main`.
+- `public/work-cv.pdf`: work CV, copied from `cv-iman-gholami/dist/iman-gholami-cv.pdf` on `main`.
+
+Keep `/cv.pdf` as the academic download to preserve existing links. After copying
+updated PDFs, run `npm run build` and commit the files. Pushes to `main` deploy
+through `.github/workflows/deploy.yml` to https://igholami.com/.
+
+Bump the cache versions in `public/sw.js` when refreshing the offline PDF copies.
+
+---
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

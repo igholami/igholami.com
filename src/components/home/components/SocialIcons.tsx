@@ -49,9 +49,11 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ justify = 'flex-start' }) => 
         <a 
           key={index}
           href={link.url}
+          aria-label={link.name}
+          title={link.name}
           target={link.type === 'email' ? undefined : '_blank'}
           rel={link.type === 'email' ? undefined : 'noopener noreferrer'}
-          className="inline-flex items-center justify-center text-2xl transition-colors duration-300 no-underline"
+          className="inline-flex items-center justify-center gap-2 text-2xl transition-colors duration-300 no-underline"
           style={{ color: '#9ca3af' }}
           onMouseEnter={(e) => {
             e.currentTarget.style.color = isGeeky ? '#4ade80' : '#60a5fa'
@@ -61,6 +63,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ justify = 'flex-start' }) => 
           }}
         >
           {renderIcon(link.type)}
+          {link.type === 'cv' && <span className="text-sm font-medium">{link.name}</span>}
         </a>
       ))}
     </div>

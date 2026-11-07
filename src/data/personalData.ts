@@ -15,7 +15,8 @@ export const socialLinks: SocialLink[] = [
   { name: "DBLP", url: "https://dblp.org/pid/356/6589.html", type: "dblp" },
   { name: "GitHub", url: "https://github.com/igholami", type: "github" },
   { name: "LinkedIn", url: "https://www.linkedin.com/in/imangholami", type: "linkedin" },
-  { name: "CV", url: "/cv.pdf", type: "cv" }
+  { name: "Academic CV", url: "/cv.pdf", type: "cv" },
+  { name: "Work CV", url: "/work-cv.pdf", type: "cv" }
 ]
 
 export const publications: Publication[] = [
