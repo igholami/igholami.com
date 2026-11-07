@@ -8,8 +8,18 @@ The homepage links to both CV versions:
 - `public/work-cv.pdf`: work CV, copied from `cv-iman-gholami/dist/iman-gholami-cv.pdf` on `main`.
 
 Keep `/cv.pdf` as the academic download to preserve existing links. After copying
-updated PDFs, run `npm run build` and commit the files. Pushes to `main` deploy
-through `.github/workflows/deploy.yml` to https://igholami.com/.
+updated PDFs, run `npm run build`, then commit and push the source files.
+Publish the locally built site with:
+
+```sh
+npm run deploy:pages
+```
+
+The command builds locally and pushes only `dist/` to the `gh-pages` branch,
+including `.nojekyll` and the custom-domain `CNAME`. GitHub Pages is configured
+to serve that branch at https://igholami.com/. Publication does not use the
+repository's custom Actions workflow. A push to `main` saves source changes;
+run the publishing command to update the live site. Git write access is required.
 
 Bump the cache versions in `public/sw.js` when refreshing the offline PDF copies.
 
