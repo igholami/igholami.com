@@ -1,7 +1,7 @@
 // Service Worker for Performance Optimization
-const CACHE_NAME = 'igholami-website-v2';
-const STATIC_CACHE = 'static-v2';
-const DYNAMIC_CACHE = 'dynamic-v2';
+const CACHE_NAME = 'igholami-website-v3';
+const STATIC_CACHE = 'static-v3';
+const DYNAMIC_CACHE = 'dynamic-v3';
 
 // Static assets to cache
 const STATIC_ASSETS = [
@@ -9,8 +9,7 @@ const STATIC_ASSETS = [
   '/index.html',
   '/favicon.ico',
   '/profile.jpg',
-  '/cv.pdf',
-  '/work-cv.pdf'
+  '/cv.pdf'
 ];
 
 // Install event - cache static assets
