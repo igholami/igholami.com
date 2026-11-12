@@ -43,13 +43,15 @@ The public Cloudflare configuration is recorded in
 - TLS mode: Full (strict), minimum TLS 1.2, Always Use HTTPS enabled.
 - `www` redirects to `https://igholami.com/`, preserving the path and query.
 - `/cv.pdf*` and `/sw.js*` bypass Cloudflare edge caching.
-- iCloud MX, DKIM, SPF, Apple verification, the existing apex verification TXT,
+- iCloud MX, DKIM, SPF, Apple verification, the GitHub domain verification TXT,
   and Squarespace Domain Connect records are preserved and are DNS-only.
 - Credentials stay outside this repository and browser bundles.
 
 ### Registrar cutover
 
-Prepared November 12, 2026; activation requires the Squarespace registrar change.
+Activated November 12, 2026 at 19:38 UTC after the Squarespace registrar change.
+Both public nameservers now point to Cloudflare and the old DS record is absent.
+The following procedure documents future migrations.
 Before replacing the Google Domains nameservers, disable the old DNSSEC signing
 and remove its DS record at the registrar. Confirm the old DS record is absent
 at the `.com` parent before changing nameservers; otherwise validating resolvers
@@ -59,8 +61,17 @@ After propagation, verify Cloudflare reports the zone as active, the public NS
 records show Cloudflare, both HTTPS hostnames work, `www` redirects, and response
 headers contain `server: cloudflare` and `cf-ray`. Check iCloud MX, SPF and DKIM
 records against the saved configuration. Check `/cv.pdf` against the SHA above.
-Re-enable DNSSEC through Cloudflare and add its new DS at Squarespace once the
-cutover is stable; do not reuse the former Google Domains DS.
+Cloudflare DNSSEC signing is now enabled and awaits its new DS at Squarespace;
+do not reuse the former Google Domains DS. Add these registrar fields:
+
+| Field | Value |
+| --- | --- |
+| Key tag | `2371` |
+| Algorithm | `13` (ECDSA P-256/SHA-256) |
+| Digest type | `2` (SHA-256) |
+| Digest | `081C4CD4A7314B2E3FD4665F65A3EA3B631F8F45B4B1292CD10D0DF0BEFA6BF4` |
+
+See [`deployment/verification.md`](deployment/verification.md) for the cutover checks.
 
 References: [Cloudflare nameserver setup](https://developers.cloudflare.com/dns/zone-setups/full-setup/setup/)
 and [DNSSEC migration](https://developers.cloudflare.com/dns/dnssec/dnssec-migration/).

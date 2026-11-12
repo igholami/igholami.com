@@ -102,6 +102,13 @@
     },
     {
       "type": "TXT",
+      "name": "_github-pages-challenge-igholami.igholami.com",
+      "content": "253a7e5da5ada4a79f9d485aaff3f4",
+      "proxied": false,
+      "ttl": 3600
+    },
+    {
+      "type": "TXT",
       "name": "igholami.com",
       "content": "apple-domain=tvc53TLc6HS1cmuk",
       "proxied": false,
@@ -111,13 +118,6 @@
       "type": "TXT",
       "name": "igholami.com",
       "content": "v=spf1 include:icloud.com ~all",
-      "proxied": false,
-      "ttl": 3600
-    },
-    {
-      "type": "TXT",
-      "name": "igholami.com",
-      "content": "253a7e5da5ada4a79f9d485aaff3f4",
       "proxied": false,
       "ttl": 3600
     }
@@ -189,5 +189,12 @@
       "priority": 1,
       "status": "active"
     }
-  ]
+  ],
+  "dnssec": {
+    "ds": "igholami.com. 3600 IN DS 2371 13 2 081C4CD4A7314B2E3FD4665F65A3EA3B631F8F45B4B1292CD10D0DF0BEFA6BF4",
+    "key_tag": 2371,
+    "algorithm": "13",
+    "digest_type": "2",
+    "digest": "081C4CD4A7314B2E3FD4665F65A3EA3B631F8F45B4B1292CD10D0DF0BEFA6BF4"
+  }
 }
