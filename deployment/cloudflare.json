@@ -1,0 +1,193 @@
+{
+  "zone_id": "ceb539678dc851db4318ee445bd2bb79",
+  "zone_name": "igholami.com",
+  "nameservers": [
+    "chuck.ns.cloudflare.com",
+    "coco.ns.cloudflare.com"
+  ],
+  "origin": "GitHub Pages: igholami/igholami.com, gh-pages branch",
+  "records": [
+    {
+      "type": "A",
+      "name": "igholami.com",
+      "content": "185.199.108.153",
+      "proxied": true,
+      "ttl": 1
+    },
+    {
+      "type": "A",
+      "name": "igholami.com",
+      "content": "185.199.109.153",
+      "proxied": true,
+      "ttl": 1
+    },
+    {
+      "type": "A",
+      "name": "igholami.com",
+      "content": "185.199.110.153",
+      "proxied": true,
+      "ttl": 1
+    },
+    {
+      "type": "A",
+      "name": "igholami.com",
+      "content": "185.199.111.153",
+      "proxied": true,
+      "ttl": 1
+    },
+    {
+      "type": "AAAA",
+      "name": "igholami.com",
+      "content": "2606:50c0:8000::153",
+      "proxied": true,
+      "ttl": 1
+    },
+    {
+      "type": "AAAA",
+      "name": "igholami.com",
+      "content": "2606:50c0:8001::153",
+      "proxied": true,
+      "ttl": 1
+    },
+    {
+      "type": "AAAA",
+      "name": "igholami.com",
+      "content": "2606:50c0:8002::153",
+      "proxied": true,
+      "ttl": 1
+    },
+    {
+      "type": "AAAA",
+      "name": "igholami.com",
+      "content": "2606:50c0:8003::153",
+      "proxied": true,
+      "ttl": 1
+    },
+    {
+      "type": "CNAME",
+      "name": "_domainconnect.igholami.com",
+      "content": "_domainconnect.domains.squarespace.com",
+      "proxied": false,
+      "ttl": 3600
+    },
+    {
+      "type": "CNAME",
+      "name": "sig1._domainkey.igholami.com",
+      "content": "sig1.dkim.igholami.com.at.icloudmailadmin.com",
+      "proxied": false,
+      "ttl": 3600
+    },
+    {
+      "type": "CNAME",
+      "name": "www.igholami.com",
+      "content": "igholami.com",
+      "proxied": true,
+      "ttl": 1
+    },
+    {
+      "type": "MX",
+      "name": "igholami.com",
+      "content": "mx01.mail.icloud.com",
+      "priority": 10,
+      "proxied": false,
+      "ttl": 3600
+    },
+    {
+      "type": "MX",
+      "name": "igholami.com",
+      "content": "mx02.mail.icloud.com",
+      "priority": 10,
+      "proxied": false,
+      "ttl": 3600
+    },
+    {
+      "type": "TXT",
+      "name": "igholami.com",
+      "content": "apple-domain=tvc53TLc6HS1cmuk",
+      "proxied": false,
+      "ttl": 3600
+    },
+    {
+      "type": "TXT",
+      "name": "igholami.com",
+      "content": "v=spf1 include:icloud.com ~all",
+      "proxied": false,
+      "ttl": 3600
+    },
+    {
+      "type": "TXT",
+      "name": "igholami.com",
+      "content": "253a7e5da5ada4a79f9d485aaff3f4",
+      "proxied": false,
+      "ttl": 3600
+    }
+  ],
+  "settings": {
+    "ssl": "strict",
+    "always_use_https": "on",
+    "min_tls_version": "1.2",
+    "automatic_https_rewrites": "on"
+  },
+  "page_rules": [
+    {
+      "targets": [
+        {
+          "target": "url",
+          "constraint": {
+            "operator": "matches",
+            "value": "www.igholami.com/*"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "id": "forwarding_url",
+          "value": {
+            "url": "https://igholami.com/$1",
+            "status_code": 301
+          }
+        }
+      ],
+      "priority": 3,
+      "status": "active"
+    },
+    {
+      "targets": [
+        {
+          "target": "url",
+          "constraint": {
+            "operator": "matches",
+            "value": "igholami.com/cv.pdf*"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "id": "cache_level",
+          "value": "bypass"
+        }
+      ],
+      "priority": 2,
+      "status": "active"
+    },
+    {
+      "targets": [
+        {
+          "target": "url",
+          "constraint": {
+            "operator": "matches",
+            "value": "igholami.com/sw.js*"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "id": "cache_level",
+          "value": "bypass"
+        }
+      ],
+      "priority": 1,
+      "status": "active"
+    }
+  ]
+}
