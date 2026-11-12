@@ -50,7 +50,7 @@ The public Cloudflare configuration is recorded in
 ### Registrar cutover
 
 Activated November 12, 2026 at 19:38 UTC after the Squarespace registrar change.
-Both public nameservers now point to Cloudflare and the old DS record is absent.
+Both public nameservers now point to Cloudflare and its new DS record is published.
 The following procedure documents future migrations.
 Before replacing the Google Domains nameservers, disable the old DNSSEC signing
 and remove its DS record at the registrar. Confirm the old DS record is absent
@@ -61,8 +61,9 @@ After propagation, verify Cloudflare reports the zone as active, the public NS
 records show Cloudflare, both HTTPS hostnames work, `www` redirects, and response
 headers contain `server: cloudflare` and `cf-ray`. Check iCloud MX, SPF and DKIM
 records against the saved configuration. Check `/cv.pdf` against the SHA above.
-Cloudflare DNSSEC signing is now enabled and awaits its new DS at Squarespace;
-do not reuse the former Google Domains DS. Add these registrar fields:
+Cloudflare DNSSEC is active. Its new DS is published at the `.com` registry and
+validation succeeds through Cloudflare's public resolver. These are the current
+registrar DS fields; do not reuse the former Google Domains DS:
 
 | Field | Value |
 | --- | --- |

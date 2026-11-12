@@ -191,6 +191,7 @@
     }
   ],
   "dnssec": {
+    "status": "active",
     "ds": "igholami.com. 3600 IN DS 2371 13 2 081C4CD4A7314B2E3FD4665F65A3EA3B631F8F45B4B1292CD10D0DF0BEFA6BF4",
     "key_tag": 2371,
     "algorithm": "13",

@@ -5,7 +5,9 @@ Checked November 12, 2026, after activation at 19:38 UTC.
 - The `.com` registry delegates to `chuck.ns.cloudflare.com` and
   `coco.ns.cloudflare.com`. Cloudflare reports the zone active.
 - The old Google Domains DNSSEC DS record was removed before activation.
-  Cloudflare signing is enabled; its replacement DS awaits registrar publication.
+  Its replacement Cloudflare DS (key tag 2371, algorithm 13, digest type 2) is now
+  published at the `.com` registry. Cloudflare reports DNSSEC active, and
+  `1.1.1.1` returns authenticated (`ad`) answers for the domain's MX records.
 - All eight apex A/AAAA records and the `www` CNAME have proxying enabled.
   Mail and domain verification records are DNS-only. The saved configuration has
   16 DNS records.
